@@ -15,7 +15,7 @@ const titlebar = (() => {
         back(action) {
             if (action) {
                 backButton.style.display = 'flex';
-                backButton.onclick = action;
+                backButton.setAttribute('onclick', action);
                 backButton.innerHTML = `${icon.back}`;
             } else {
                 backButton.style.display = 'none';
@@ -160,12 +160,12 @@ const device = {
 };
 
 navigation.set([
-    { name: 'Overview', icon: icon.kit, action: 'examplePage()' },
+    { name: 'Overview', icon: icon.kit, action: 'overviewPage()' },
     { name: 'Info', icon: icon.kit, action: 'infoPage()' },
 ]);
 
 navigation.show();
-examplePage();
+overviewPage();
 
 function toggleSetting(id) {
     const element = document.getElementById(id);
@@ -178,97 +178,6 @@ function toggleSetting(id) {
     }
 }
 
-function examplePage() {
-    page = `example`;
-
-    titlebar.set(`Eris UI`);
-    titlebar.clear(false);
-    titlebar.show();
-    titlebar.back(``);
-
-    navigation.show();
-    content.classList.remove('max');
-    content.scrollTo(0,0);
-    content.style = ``;
-
-    content.innerHTML = `
-        <div class="settings">
-            <span class="settings-options-title">Header</span>
-            <div class="settings-options">
-                <div class="menu-button" id="exampleSetting" onclick="toggleSetting('exampleSetting')"><span>Example Setting</span><div class="toggle">${icon.check}</div></div>
-                <div class="menu-button" id="settingTwo" onclick="openAlert({title: 'Message', message: 'Are you sure?', buttons: [{text: 'OK', action: 'toggleSetting(\\'settingTwo\\');closeAlert()'},{text: 'Cancel', action: 'closeAlert()'}]})"><span>Double Checking</span><div class="toggle">${icon.check}</div></div>
-            </div>
-            <span class="settings-options-sub">A subtitle.</span>
-            <div class="settings-options">
-                <div class="menu-button" onclick="openModal({title: 'Example Modal', body: 'This is an example modal.'})"><span>Example Modal</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="openAlert({title: 'Example Alert', message: 'This is an example alert.'})"><span>Example Alert</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="openAlert({title: 'Example Alert', message: 'This is an example alert with buttons.', buttons: [{text: 'OK', action: 'closeAlert()'},{text: 'Yay', action: 'closeAlert()'}]})"><span>Example Alert with Buttons</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="tooltip({icon: icon.alert, title: 'Example Tooltip'})"><span>Example Tooltip</span>${icon.arrow}</div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-title" onclick="accordion(this)"><span>Accordion</span>${icon.dropdown}</div>
-                <div class="accordion-content">
-                    <div class="accordion-content-inner"><span>Lorem ipsum dolor sit amet consectetur adipiscing elit. Amet, vivamus faucibus.</span></div>
-                </div>
-            </div>
-            <div class="accordion">
-                <div class="accordion-title" onclick="accordion(this)"><span>More Options</span>${icon.dropdown}</div>
-                <div class="accordion-content">
-                    <div class="menu-button" onclick="transitionPage('infoPage()')"><span>Information</span>${icon.arrow}</div>
-                </div>
-            </div>
-            <span class="settings-options-title">Device</span>
-            <div class="json-block">${JSON.stringify(device, null, 2).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;')}</div>
-            <span class="settings-options-title">Settings</span>
-            <div class="json-block">${JSON.stringify(storage.settings.all()).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;')}</div>
-            <span class="settings-options-title">LocalStorage</span>
-            <div class="json-block">${JSON.stringify(storage.all()).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;')}</div>
-            <div class="settings-options">
-                <div class="menu-button red" onclick="openAlert({title: 'Clear LocalStorage', message: 'Are you sure?', buttons: [{text: 'OK', action: 'storage.clear();closeAlert()'},{text: 'Cancel', action: 'closeAlert()'}]})"><span>Clear LocalStorage</span></div>
-            </div>
-        </div>
-    `;
-
-    pageElements();
-
-    document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
-    document.querySelector('.nav').getElementsByClassName('nav-item')[0].classList.add('active');
-}
-
-function infoPage() {
-    page = `info`;
-
-    titlebar.set(`Info`);
-    titlebar.clear(false);
-    titlebar.show();
-    titlebar.back(``);
-
-    navigation.show();
-    content.classList.remove('max');
-    content.scrollTo(0,0);
-    content.style = ``;
-
-    content.innerHTML = `
-    <div class="page">
-        <span class="settings-title">Hello!!!</span>
-        <span>this is a loading icon</span>
-        <div class="loader animate text">${icon.loader}</div>
-        <span>im gonna add accordions and &lt;option&gt; elements, more loading things, radio buttons</span>
-        <span>and other things that get suggested</span>
-        <span>stay tuned!! :3</span>
-        <span>- Eris</span>
-        <div class="settings-options">
-            <div class="menu-button" onclick="transitionPage('infoPage()')"><span>forward</span>${icon.arrow}</div>
-        </div>
-    <div>
-    `;
-
-    pageElements();
-
-    document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
-    document.querySelector('.nav').getElementsByClassName('nav-item')[1].classList.add('active');
-}
-
 function accordion(element) {
     if (element.parentNode.classList.contains('open')) {
         element.parentNode.style.maxHeight = element.scrollHeight + "px";
@@ -279,18 +188,29 @@ function accordion(element) {
     }
 }
 
-function transitionPage(topage) {
-    if (page !== topage) {
-        content.classList.add('left');
+function navigateForward(topage) {
+    content.classList.add('left');
+    setTimeout(() => {
+        content.classList.remove('left');
+        content.classList.add('right');
+        eval(topage);
         setTimeout(() => {
-            content.classList.remove('left');
-            content.classList.add('right');
-            eval(topage);
-            setTimeout(() => {
-                content.classList.remove('right');
-            }, 1);
-        }, 100);
-    };
+            content.classList.remove('right');
+        }, 1);
+    }, 100);
+}
+
+function navigateBack(topage) {
+    console.log(topage);
+    content.classList.add('right-back');
+    setTimeout(() => {
+        content.classList.remove('right-back');
+        content.classList.add('left-back');
+        eval(topage);
+        setTimeout(() => {
+            content.classList.remove('left-back');
+        }, 1);
+    }, 100);
 }
 
 function pageElements() {
