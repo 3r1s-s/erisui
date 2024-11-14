@@ -220,12 +220,7 @@ function examplePage() {
         </div>
     `;
 
-    const options = document.querySelectorAll('.menu-button');
-    options.forEach(option => {
-        if (settings.get(option.id)) {
-            option.classList.add('checked');
-        }
-    });
+    pageElements();
 
     document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
     document.querySelector('.nav').getElementsByClassName('nav-item')[0].classList.add('active');
@@ -253,11 +248,35 @@ function infoPage() {
         <span>and other things that get suggested</span>
         <span>stay tuned!! :3</span>
         <span>- Eris</span>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Accordion</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                <div class="accordion-content-inner"><span>Lorem ipsum dolor sit amet consectetur adipiscing elit. Amet, vivamus faucibus.</span></div>
+            </div>
+        </div>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Accordion</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                <div class="menu-button" onclick="transitionPage('examplePage()')"><span>Overview</span>${icon.arrow}</div>
+            </div>
+        </div>
     <div>
     `;
 
+    pageElements();
+
     document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
     document.querySelector('.nav').getElementsByClassName('nav-item')[1].classList.add('active');
+}
+
+function accordion(element) {
+    if (element.parentNode.classList.contains('open')) {
+        element.parentNode.style.maxHeight = element.scrollHeight + "px";
+        element.parentNode.classList.remove('open');
+    } else {
+        element.parentNode.style.maxHeight = element.scrollHeight + element.parentNode.querySelector('.accordion-content').scrollHeight + "px";
+        element.parentNode.classList.add('open');
+    }
 }
 
 function transitionPage(topage) {
@@ -272,4 +291,15 @@ function transitionPage(topage) {
             }, 50);
         }, 100);
     };
+}
+
+function pageElements() {
+    const options = document.querySelectorAll('.menu-button');
+    options.forEach(option => {
+        if (settings.get(option.id)) {
+            option.classList.add('checked');
+        }
+    });
+
+    document.querySelectorAll('.accordion').forEach(element => element.style.maxHeight = element.querySelector('.accordion-title').scrollHeight + "px");
 }
