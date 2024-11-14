@@ -3,12 +3,12 @@
     "name": "Eris UI",
     "icons": [
       {
-        "src": "/src/assets/images/icon.png",
+        "src": "/src/assets/images/icon-mobile.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "/src/assets/images/icon.png",
+        "src": "/src/assets/images/icon-mobile.png",
         "sizes": "256x256",
         "type": "image/jpeg"
       }
