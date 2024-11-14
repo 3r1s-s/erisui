@@ -1,0 +1,265 @@
+.light {
+    --app-text: #1b1b2f;
+    --app-link: #382a83;
+
+    --app-100: #ffffff;
+    --app-200: #f4f4f9;
+    --app-300: #e5e5f2;
+    --app-400: #d9d9e6;
+    --app-500: #c4c4d5;
+    --app-600: #b3b3c4;
+    --app-700: #9f9fb0;
+    --app-800: #8d8d9c;
+    --app-900: #7a7a89;
+
+    --app-accent: #382a83;
+    
+    --titlebar: rgba(229, 229, 242, 0.8);
+
+    --app-blue: #1f6bff;
+    --app-red: #e84136;
+    --app-green: #3cb57f;
+    --app-yellow: #ffe463;
+    --app-pink: #ff47ff;
+    --app-purple: #7044ff;
+    --app-orange: #ff8a47;
+
+    --app-dark-blue: #2056c8;
+    --app-dark-red: #b6382e;
+    --app-dark-green: #2f8960;
+    --app-dark-yellow: #c7a800;
+    --app-dark-pink: #b941b4;
+    --app-dark-purple: #5332bf;
+    --app-dark-orange: #c76933;
+
+    --modal-100: var(--app-100);
+    --modal-200: var(--app-200);
+    --modal-300: var(--app-400);
+    --modal-400: var(--app-300);
+    --modal-500: var(--app-600);
+    --modal-600: var(--app-500);
+    --modal-700: var(--app-700);
+    --modal-800: var(--app-800);
+    --modal-900: var(--app-900);
+
+    --brand-purple: #a083ff;
+    --brand-purple-dark: #4d3f7d;
+
+    .chat .chat-wrapper {
+        background: var(--app-100);
+    } 
+
+    .chat.favourite .chat-wrapper {
+        background: var(--app-200);
+    } 
+
+    .chat:active .chat-wrapper {
+        background: var(--app-300);
+    } 
+
+    .chat:active.favourite .chat-wrapper {
+        background: var(--app-400);
+    } 
+
+    .search-outer {
+        background: var(--app-200);
+    }
+
+    .search {
+        background: var(--app-400);
+    }
+
+    .content {
+        background: var(--app-100);
+    }
+
+    .titlebar.chat-trans {
+        background: var(--app-100);
+    }
+
+    .chat-info {
+        background-color: var(--app-100);
+    }
+
+    .favourite > .chat-icon.online::after, .favourite > .chat-icon.attention::after, .favourite > .chat-icon-svg.online::after, .favourite > .chat-icon-svg.attention::after {
+        border: 4px solid var(--app-200);
+    }
+
+    .chat-icon.online::after, .chat-icon-svg.online::after {
+        border: 4px solid var(--app-100);
+    }
+
+    .message-container::after, .message-container {
+        background: var(--app-100);
+    }
+
+    .chat-icon-svg {
+        background: var(--app-600);
+    }
+
+    .server-post {
+        color: #00000070;
+    }
+
+    .modal-outer.open {
+        background-color: rgba(101, 100, 108, 0.8);
+        visibility: visible;
+    }
+}
+
+.oled {
+    --app-text: #e7e9f3;
+    --app-link: #3679f0;
+    --app-100: #000000;
+    --app-200: #020202;
+    --app-300: #141414;
+    --app-400: #171717;
+    --app-500: #1e1e1e;
+    --app-600: #262626;
+    --app-700: #333333;
+    --app-800: #434343;
+    --app-900: #4e4e4e;
+
+    --modal-100: var(--app-100);
+    --modal-200: var(--app-200);
+    --modal-300: var(--app-300);
+    --modal-400: var(--app-100);
+    --modal-500: var(--app-400);
+    --modal-600: var(--app-600);
+    --modal-700: var(--app-700);
+    --modal-800: var(--app-800);
+    --modal-900: var(--app-900);
+
+    --titlebar: rgba(12, 12, 12, 0.8);
+
+    .chat .chat-wrapper {
+        background: var(--app-100);
+    }
+
+    .chat:active .chat-wrapper {
+        background: var(--app-500);
+    }
+
+    .chat.favourite .chat-wrapper {
+        background: var(--app-300);
+    }
+
+    .chat.favourite:active .chat-wrapper {
+        background: var(--app-500);
+    }
+
+    .search-outer {
+        background: var(--app-300);
+    }
+
+    .search, .search-full {
+        background: var(--app-200);
+    }
+}
+
+.catppuccin-macchiato {
+    --app-text: #cad3f5;
+    --app-link: #8aadf4;
+    --app-100: #181926;
+    --app-200: #1e2030;
+    --app-300: #24273a;
+    --app-400: #363a4f;
+    --app-500: #494d64;
+    --app-600: #5b6078;
+    --app-700: #6e738d;
+    --app-800: #8087a2;
+    --app-900: #939ab7;
+
+    --modal-100: var(--app-400);
+    --modal-200: var(--app-300);
+    --modal-300: var(--app-300);
+    --modal-400: var(--app-100);
+    --modal-500: var(--app-200);
+    --modal-600: var(--app-300);
+    --modal-700: var(--app-400);
+    --modal-800: var(--app-500);
+    --modal-900: var(--app-600);
+
+    --titlebar: rgba(24, 25, 38, 0.8);
+
+    --app-blue: #8aadf4;
+    --app-red: #ed8796;
+    --app-green: #a6da95;
+    --app-yellow: #eed49f;
+    --app-pink: #f5bde6;
+    --app-purple: #c6a0f6;
+    --app-orange: #ee99a0;
+
+    --brand-purple: #8aadf4;
+    --brand-purple-dark: #b2c8e4;
+
+    .chat-icon-svg {
+        background: var(--app-300);
+    }
+}
+
+.thirteen {
+    --app-blue: #1f6bff;
+    --app-red: #e84136;
+    --app-green: #23a55a;
+    --app-yellow: #ecce3c;
+    --app-pink: #e04ae0;
+    --app-purple: #3a17ab;
+    --app-orange: #f7772d;
+
+    --app-dark-blue: #2056c8;
+    --app-dark-red: #b6382e;
+    --app-dark-green: #127f3f;
+    --app-dark-yellow: #c7a800;
+    --app-dark-pink: #8f2f8f;
+    --app-dark-purple: #210d60;
+    --app-dark-orange: #c76933;
+
+    --app-text: #eeeeee;
+    --app-link: var(--app-orange);
+    --app-100: #000000;
+    --app-200: #020202;
+    --app-300: #080808;
+    --app-400: #101010;
+    --app-500: #151515;
+    --app-600: #191919;
+    --app-700: #1a1a1a;
+    --app-800: #1f1f1f;
+    --app-900: #292929;
+
+    --modal-100: var(--app-100);
+    --modal-200: var(--app-200);
+    --modal-300: var(--app-300);
+    --modal-400: var(--app-100);
+    --modal-500: var(--app-400);
+    --modal-600: var(--app-600);
+    --modal-700: var(--app-700);
+    --modal-800: var(--app-800);
+    --modal-900: var(--app-900);
+
+    --brand-purple: var(--app-orange);
+    --brand-purple-dark: var(--app-dark-orange);
+
+    --titlebar: rgba(0, 0, 0, 0.8);
+
+    .chat {
+        background: var(--app-100);
+    }
+
+    .chat:active {
+        background: var(--app-500);
+    }
+
+    .chat.favourite {
+        background: var(--app-300);
+    }
+
+    .chat.chat.favourite:active {
+        background: var(--app-500);
+    }
+
+    .checked .toggle {
+        border: 2px solid var(--app-orange);
+        background-color: var(--app-orange);
+    }
+}
