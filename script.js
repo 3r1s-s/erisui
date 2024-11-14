@@ -201,7 +201,6 @@ function navigateForward(topage) {
 }
 
 function navigateBack(topage) {
-    console.log(topage);
     content.classList.add('right-back');
     setTimeout(() => {
         content.classList.remove('right-back');
