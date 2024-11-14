@@ -257,6 +257,9 @@ function infoPage() {
         <span>and other things that get suggested</span>
         <span>stay tuned!! :3</span>
         <span>- Eris</span>
+        <div class="settings-options">
+            <div class="menu-button" onclick="transitionPage('infoPage()')"><span>forward</span>${icon.arrow}</div>
+        </div>
     <div>
     `;
 
@@ -285,7 +288,7 @@ function transitionPage(topage) {
             eval(topage);
             setTimeout(() => {
                 content.classList.remove('right');
-            }, 50);
+            }, 1);
         }, 100);
     };
 }
