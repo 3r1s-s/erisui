@@ -552,7 +552,7 @@ iframe {
 .menu-options {
     display: flex;
     flex-direction: column;
-    background: var(--modal-300);
+    background: var(--app-300);
     overflow: hidden;
     border-radius: 20px;
     margin-top: 10px;
@@ -562,7 +562,7 @@ iframe {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--modal-300);
+    background: var(--app-300);
     font-weight: 500;
     padding: 15px;
 }

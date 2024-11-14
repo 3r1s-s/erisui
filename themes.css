@@ -45,65 +45,12 @@
     --brand-purple: #a083ff;
     --brand-purple-dark: #4d3f7d;
 
-    .chat .chat-wrapper {
-        background: var(--app-100);
-    } 
-
-    .chat.favourite .chat-wrapper {
-        background: var(--app-200);
-    } 
-
-    .chat:active .chat-wrapper {
-        background: var(--app-300);
-    } 
-
-    .chat:active.favourite .chat-wrapper {
-        background: var(--app-400);
-    } 
-
-    .search-outer {
-        background: var(--app-200);
-    }
-
-    .search {
-        background: var(--app-400);
-    }
-
     .content {
         background: var(--app-100);
     }
 
-    .titlebar.chat-trans {
-        background: var(--app-100);
-    }
-
-    .chat-info {
-        background-color: var(--app-100);
-    }
-
-    .favourite > .chat-icon.online::after, .favourite > .chat-icon.attention::after, .favourite > .chat-icon-svg.online::after, .favourite > .chat-icon-svg.attention::after {
-        border: 4px solid var(--app-200);
-    }
-
-    .chat-icon.online::after, .chat-icon-svg.online::after {
-        border: 4px solid var(--app-100);
-    }
-
-    .message-container::after, .message-container {
-        background: var(--app-100);
-    }
-
-    .chat-icon-svg {
-        background: var(--app-600);
-    }
-
-    .server-post {
-        color: #00000070;
-    }
-
-    .modal-outer.open {
+    .modal-outer.open, .alert-outer.open, .view-image-outer.open {
         background-color: rgba(101, 100, 108, 0.8);
-        visibility: visible;
     }
 }
 
