@@ -20,6 +20,7 @@ function overviewPage() {
                 <div class="menu-button" onclick="navigateForward('modalsPage()')"><span>Modals</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('accordionsPage()')"><span>Accordions</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('progressbarPage()')"><span>Progressbars</span>${icon.arrow}</div>
+                <div class="menu-button" onclick="navigateForward('themesPage()')"><span>Themes</span>${icon.arrow}</div>
             </div>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('devicePage()')"><span>Device Info</span>${icon.arrow}</div>
@@ -232,4 +233,53 @@ function titlebarsPage() {
 
     document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
     document.querySelector('.nav').getElementsByClassName('nav-item')[1].classList.add('active');
+}
+
+function themesPage() {
+    page = `themes`;
+
+    titlebar.set(`Themes`);
+    titlebar.clear(false);
+    titlebar.back(`navigateBack('overviewPage()');`);
+
+    navigation.show();
+    content.classList.remove('max');
+    content.scrollTo(0,0);
+
+    content.innerHTML = `
+        <div class="settings appearance">
+            <div class="theme-options">
+                <div class="theme-option dark" onclick="theme.set('dark')" style="--app-500: #1a1825;--app-900: #3e3b50;">
+                    <div class="theme-colour">
+                    </div>
+                    <div class="theme-name">
+                        <span>Dark</span>
+                    </div>
+                </div>
+                <div class="theme-option light" onclick="theme.set('light')">
+                    <div class="theme-colour">
+                    </div>
+                    <div class="theme-name">
+                        <span>Light</span>
+                    </div>
+                </div>
+                <div class="theme-option catppuccin-macchiato" onclick="theme.set('catppuccin-macchiato')">
+                    <div class="theme-colour">
+                    </div>
+                    <div class="theme-name">
+                        <span>Twilight</span>
+                    </div>
+                </div>
+                <div class="theme-option oled" onclick="theme.set('oled')">
+                    <div class="theme-colour">
+                    </div>
+                    <div class="theme-name">
+                        <span>Black</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    setTheme();
 }

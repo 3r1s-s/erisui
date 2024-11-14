@@ -1,6 +1,6 @@
 const content = document.querySelector('.content');
-
 const app = document.querySelector('.app');
+let page;
 
 const titlebar = (() => {
     const titlebar = document.querySelector('.titlebar');
@@ -165,6 +165,7 @@ navigation.set([
 ]);
 
 navigation.show();
+setTheme();
 overviewPage();
 
 function toggleSetting(id) {
@@ -221,4 +222,59 @@ function pageElements() {
     });
 
     document.querySelectorAll('.accordion').forEach(element => element.style.maxHeight = element.querySelector('.accordion-title').scrollHeight + "px");
+}
+
+function timeAgo(tstamp) {
+    const currentTime = Date.now();
+    const lastSeenTime = tstamp * 1000;
+    const timeDifference = currentTime - lastSeenTime;
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+
+    if (days > 0) {
+        return `${days} day${days > 1 ? 's' : ''} ago`;
+    } else if (hours > 0) {
+        return `${hours} hour${hours > 1 ? 's' : ''} ago`;
+    } else if (minutes > 0) {
+        return `${minutes} minute${minutes > 1 ? 's' : ''} ago`;
+    } else {
+        return `${seconds} second${seconds > 1 ? 's' : ''} ago`;
+    }
+}
+
+function setTheme() {
+    document.querySelector('html').classList = '';
+
+    if (theme.get() === 'system') {
+        if (window.matchMedia) {
+            const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+            if (systemDark.matches) {
+            } else {
+                document.querySelector('html').classList.add('light');
+            }
+        }
+    } else {
+        document.querySelector('html').classList.add(theme.get() || 'dark');
+    }
+
+    if (page === 'themes') {
+        if (document.querySelector(`.theme-option.selected`)) {            
+            document.querySelector('.theme-option.selected').classList.remove('selected');
+        }
+        if (theme.get()) {
+            document.querySelector(`.theme-option.${theme.get()}`).classList.add('selected');
+        } else {
+            document.querySelector(`.theme-option.dark`).classList.add('selected');
+        }
+    }
+}
+
+function formatSize(bytes) {
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    if (bytes === 0) return '0 Byte';
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    const size = (bytes / Math.pow(1024, i)).toFixed(2);
+    return `${size} ${sizes[i]}`;
 }

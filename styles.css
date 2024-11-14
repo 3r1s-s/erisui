@@ -658,6 +658,51 @@ iframe {
     transform: translateY(-1.25em);
 }
 
+.theme-options {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 8px 16px;
+    mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    scrollbar-width: none;
+}
+
+.theme-option {
+    display: flex;
+    gap: 6px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1);
+    transition: all cubic-bezier(.2,-.25,0,1.6) 0.2s;
+}
+
+.theme-option:active {
+    transform: scale(0.9);
+}
+
+.theme-colour {
+    background: var(--app-500);
+    width: 50px;
+    height: 70px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    outline-offset: 4px;
+    margin: 5px;
+    border: 1px solid var(--app-900);
+}
+
+.selected .theme-colour {
+    outline: 3px solid var(--brand-purple);
+}
+
+.theme-name {
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
 .toggle {
     width: 20px;
     height: 20px;
@@ -912,7 +957,7 @@ iframe {
 }
 
 .settings .settings-title {
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 .json-block {
