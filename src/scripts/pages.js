@@ -230,9 +230,6 @@ function titlebarsPage() {
     `;
 
     pageElements();
-
-    document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
-    document.querySelector('.nav').getElementsByClassName('nav-item')[1].classList.add('active');
 }
 
 function themesPage() {
