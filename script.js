@@ -205,8 +205,17 @@ function examplePage() {
                 <div class="menu-button" onclick="openAlert({title: 'Example Alert', message: 'This is an example alert with buttons.', buttons: [{text: 'OK', action: 'closeAlert()'},{text: 'Yay', action: 'closeAlert()'}]})"><span>Example Alert with Buttons</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="tooltip({icon: icon.alert, title: 'Example Tooltip'})"><span>Example Tooltip</span>${icon.arrow}</div>
             </div>
-            <div class="settings-options">
-                <div class="menu-button" onclick="transitionPage('infoPage()')"><span>Information</span>${icon.arrow}</div>
+            <div class="accordion">
+                <div class="accordion-title" onclick="accordion(this)"><span>Accordion</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner"><span>Lorem ipsum dolor sit amet consectetur adipiscing elit. Amet, vivamus faucibus.</span></div>
+                </div>
+            </div>
+            <div class="accordion">
+                <div class="accordion-title" onclick="accordion(this)"><span>More Options</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="menu-button" onclick="transitionPage('infoPage()')"><span>Information</span>${icon.arrow}</div>
+                </div>
             </div>
             <span class="settings-options-title">Device</span>
             <div class="json-block">${JSON.stringify(device, null, 2).replace(/\n/g, '<br>').replace(/ /g, '&nbsp;')}</div>
@@ -248,18 +257,6 @@ function infoPage() {
         <span>and other things that get suggested</span>
         <span>stay tuned!! :3</span>
         <span>- Eris</span>
-        <div class="accordion">
-            <div class="accordion-title" onclick="accordion(this)"><span>Accordion</span>${icon.dropdown}</div>
-            <div class="accordion-content">
-                <div class="accordion-content-inner"><span>Lorem ipsum dolor sit amet consectetur adipiscing elit. Amet, vivamus faucibus.</span></div>
-            </div>
-        </div>
-        <div class="accordion">
-            <div class="accordion-title" onclick="accordion(this)"><span>Accordion</span>${icon.dropdown}</div>
-            <div class="accordion-content">
-                <div class="menu-button" onclick="transitionPage('examplePage()')"><span>Overview</span>${icon.arrow}</div>
-            </div>
-        </div>
     <div>
     `;
 
