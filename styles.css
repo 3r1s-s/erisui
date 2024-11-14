@@ -92,7 +92,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: #000;
+    background: var(--app-100);
     color: var(--app-text);
     padding-top: env(safe-area-inset-top);
     box-sizing: border-box;
