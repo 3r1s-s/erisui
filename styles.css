@@ -1006,11 +1006,10 @@ iframe {
 .accordion {
     display: flex;
     flex-direction: column;
-    background: var(--modal-300);
+    background: var(--app-300);
     font-weight: 500;
     border-radius: 20px;
     overflow: hidden;
-    cursor: pointer;
     transition: max-height 243ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1019,6 +1018,10 @@ iframe {
     padding: 15px;
     justify-content: space-between;
     align-items: center;
+}
+
+.accordion-title:active {
+    background: var(--app-500);
 }
 
 .dropdown-arrow {
