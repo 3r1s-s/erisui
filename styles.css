@@ -208,7 +208,7 @@ iframe {
 }
 
 .titlebar.large {
-    --titlebar-height: 100px;
+    --titlebar-height: 90px;
 
     display: flex;
     flex-direction: column;
@@ -220,7 +220,7 @@ iframe {
 }
 
 .titlebar.large + .content {
-    --titlebar-height: 100px;
+    --titlebar-height: 90px;
 }
 
 .titlebar.trans {
@@ -256,7 +256,7 @@ iframe {
     margin: auto 20px;
     position: absolute;
     left: 0;
-    top: 60px;
+    top: calc(60px + env(safe-area-inset-top));
     text-align: left;
     transform: none;
 }
