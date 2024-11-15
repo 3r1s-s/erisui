@@ -106,6 +106,7 @@ button, input {
 button {
     border: none;
     background: var(--app-500);
+    color: var(--app-text);
     width: max-content;
     border-radius: 15px;
     padding: 8px 20px;
