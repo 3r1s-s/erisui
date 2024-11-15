@@ -1,8 +1,8 @@
 function overviewPage() {
     page = `overview`;
 
-    titlebar.set(``);
-    titlebar.clear(true);
+    titlebar.set(`Overview`);
+    titlebar.type('large');
     titlebar.show();
     titlebar.back(``);
 
@@ -13,7 +13,6 @@ function overviewPage() {
 
     content.innerHTML = `
         <div class="settings">
-            <span class="settings-title">Overview</span>
             <span class="settings-options-title">Title</span>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('titlebarsPage()')"><span>Titlebars</span>${icon.arrow}</div>
@@ -41,8 +40,8 @@ function overviewPage() {
 function infoPage() {
     page = `info`;
 
-    titlebar.set(`Info`);
-    titlebar.clear(false);
+    titlebar.set(`Hello!!`);
+    titlebar.type('large');
     titlebar.show();
     titlebar.back(``);
 
@@ -53,10 +52,8 @@ function infoPage() {
 
     content.innerHTML = `
     <div class="page">
-        <span class="settings-title">Hello!!!</span>
-        <span>im gonna add accordions and &lt;option&gt; elements, more loading things, radio buttons</span>
-        <span>and other things that get suggested</span>
-        <span>stay tuned!! :3</span>
+        <span>Since TeleMeow is dead I decided to make a UI framework out of it.</span>
+        <span>Please give awesome feedback!! :3</span>
         <span>- Eris</span>
     <div>
     `;
@@ -71,7 +68,7 @@ function devicePage() {
     page = `device`;
 
     titlebar.set(`Device`);
-    titlebar.clear(false);
+    titlebar.type();
     titlebar.show();
     titlebar.back('navigateBack(`overviewPage()`)');
 
@@ -101,7 +98,7 @@ function modalsPage() {
     page = `modals`;
 
     titlebar.set(`Modals`);
-    titlebar.clear(false);
+    titlebar.type();
     titlebar.show();
     titlebar.back('navigateBack(`overviewPage()`);');
 
@@ -128,7 +125,7 @@ function accordionsPage() {
     page = `accordions`;
 
     titlebar.set(`Accordions`);
-    titlebar.clear(false);
+    titlebar.type();
     titlebar.show();
     titlebar.back('navigateBack("overviewPage()");');
 
@@ -161,7 +158,7 @@ function progressbarPage() {
     page = `progressbars`;
 
     titlebar.set(`Loaders & Progressbars`);
-    titlebar.clear(false);
+    titlebar.type();
     titlebar.show();
     titlebar.back('navigateBack("overviewPage()");');
 
@@ -188,33 +185,11 @@ function progressbarPage() {
     pageElements();
 }
 
-function titlebarInnerPage() {
-    page = `titlebar-inner`;
-
-    titlebar.set(`Default Titlebar`);
-    titlebar.clear(false);
-    titlebar.show();    
-    titlebar.back('navigateBack(`titlebarsPage()`);');
-
-    navigation.show();
-    content.classList.remove('max');
-    content.scrollTo(0,0);
-    content.style = ``;
-
-    content.innerHTML = `
-    <div class="page">
-        <span>This page uses the default titlebar, it also has a back button.</span>
-    <div>
-    `;
-
-    pageElements();
-}
-
 function titlebarsPage() {
     page = `titlebars`;
 
-    titlebar.set(``);
-    titlebar.clear(true);
+    titlebar.set(`Titlebars`);
+    titlebar.type('large');
     titlebar.show();
     titlebar.back(`navigateBack('overviewPage()');`);
 
@@ -225,10 +200,10 @@ function titlebarsPage() {
 
     content.innerHTML = `
     <div class="page">
-        <span class="settings-title">Titlebars</span>
-        <span>This page has no titlebar, and has a back button.</span>
+        <span>This page has a large titlebar, and a back button.</span>
         <div class="settings-options">
-            <div class="menu-button" onclick="navigateForward('titlebarInnerPage()')"><span>Default Titlebar</span>${icon.arrow}</div>
+            <div class="menu-button" onclick="navigateForward('titlebarInnerPage(0)')"><span>Clear Titlebar</span>${icon.arrow}</div>
+            <div class="menu-button" onclick="navigateForward('titlebarInnerPage(1)')"><span>Default Titlebar</span>${icon.arrow}</div>
         </div>
     <div>
     `;
@@ -236,11 +211,46 @@ function titlebarsPage() {
     pageElements();
 }
 
+function titlebarInnerPage(x) {
+    page = `titlebar-inner`;
+
+    if (x) {
+        titlebar.set(`Default Titlebar`);
+        titlebar.type();
+        titlebar.show();    
+        titlebar.back('navigateBack(`titlebarsPage()`);');
+
+        content.innerHTML = `
+        <div class="page">
+            <span>This page uses the default titlebar, it also has a back button.</span>
+        <div>
+        `;
+    } else {
+        titlebar.set(``);
+        titlebar.type('clear');
+        titlebar.show();    
+        titlebar.back('navigateBack(`titlebarsPage()`);');
+
+        content.innerHTML = `
+        <div class="page">
+            <span>This page uses a clear titlebar, it might has a back button.</span>
+        <div>
+        `;
+    }
+
+    navigation.show();
+    content.classList.remove('max');
+    content.scrollTo(0,0);
+    content.style = ``;
+
+    pageElements();
+}
+
 function buttonsPage() {
     page = `buttons`;
 
-    titlebar.set(``);
-    titlebar.clear(true);
+    titlebar.set(`Buttons`);
+    titlebar.type('large');
     titlebar.show();
     titlebar.back(`navigateBack('overviewPage()');`);
 
@@ -251,7 +261,6 @@ function buttonsPage() {
 
     content.innerHTML = `
     <div class="page">
-        <span class="settings-title">Buttons</span>
         <span>A simple button with text content.</span>
         <button>Standard Button</button>
         <span>Accent styled button.</span>
@@ -268,7 +277,7 @@ function themesPage() {
     page = `themes`;
 
     titlebar.set(`Themes`);
-    titlebar.clear(false);
+    titlebar.type();
     titlebar.back(`navigateBack('overviewPage()');`);
 
     navigation.show();

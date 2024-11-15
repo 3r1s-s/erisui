@@ -22,9 +22,17 @@ const titlebar = (() => {
                 backButton.onclick = null;
             }
         },
-        clear(val) {
-            titlebar.classList.toggle('trans', val && val !== 'chat');
-            titlebar.classList.toggle('chat-trans', val === 'chat');
+        type(val) {
+            if (val === 'large') {
+                titlebar.classList.add('large');
+                titlebar.classList.remove('trans');
+            } else if (val === 'clear') {
+                titlebar.classList.add('trans');
+                titlebar.classList.remove('large');
+            } else {
+                titlebar.classList.remove('large');
+                titlebar.classList.remove('trans');
+            }
         }
     };
 })();

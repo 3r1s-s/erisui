@@ -43,9 +43,6 @@
     --app-dark-purple: #5f5bff;
     --app-dark-orange: #c86f33;
 
-    --nav-height: 60px;
-    --titlebar-height: 40px;
-
     --modal-text: var(--app-text);
     --modal-link: var(--app-link);
     --modal-accent: var(--app-blue);
@@ -168,6 +165,9 @@ iframe {
 }
 
 .app {
+    --nav-height: 60px;
+    --titlebar-height: 40px;
+    
     width: 100%;
     height: 100%;
     display: flex;
@@ -205,12 +205,22 @@ iframe {
     font-weight: 600;
     backdrop-filter: blur(20px) saturate(1.2);
     -webkit-backdrop-filter: blur(20px) saturate(1.2);
-    transition: background 0.1s cubic-bezier(.2,0,0,1);
 }
 
-.titlebar.chat-trans {
-    background: var(--app-200);
+.titlebar.large {
+    --titlebar-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--app-100);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border-bottom: none;
+}
+
+.titlebar.large + .content {
+    --titlebar-height: 100px;
 }
 
 .titlebar.trans {
@@ -240,9 +250,20 @@ iframe {
     transform: translateX(-50%);
 }
 
+.titlebar.large .title {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin: auto 20px;
+    position: absolute;
+    left: 0;
+    top: 60px;
+    text-align: left;
+    transform: none;
+}
+
 .titlebar-back {
-    aspect-ratio: 1/1;
-    height: 100%;
+    width: 40px;
+    height: 40px;
     display: none;
     justify-content: center;
     align-items: center;
