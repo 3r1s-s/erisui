@@ -223,6 +223,14 @@ function titlebarInnerPage(x) {
         content.innerHTML = `
         <div class="page">
             <span>This page uses the default titlebar, it also has a back button.</span>
+            <div class="accordion">
+                <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="json-block">titlebar.set(&quot;Title&quot;);
+titlebar.type();
+titlebar.show();</div>
+                </div>
+            </div>
         <div>
         `;
     } else {
@@ -234,6 +242,14 @@ function titlebarInnerPage(x) {
         content.innerHTML = `
         <div class="page">
             <span>This page uses a clear titlebar, it might has a back button.</span>
+            <div class="accordion">
+                <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="json-block">titlebar.set(&quot;&quot;);
+titlebar.type(&quot;clear&quot;);
+titlebar.show();</div>
+                </div>
+            </div>
         <div>
         `;
     }
@@ -263,10 +279,28 @@ function buttonsPage() {
     <div class="page">
         <span>A simple button with text content.</span>
         <button>Standard Button</button>
+        <div class="accordion">
+                <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="json-block">&lt;button&gt;Button&lt;/button&gt;</div>
+            </div>
+        </div>
         <span>Accent styled button.</span>
         <button class="accent">Accent Style Button</button>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="json-block">&lt;button class=&quot;accent&quot;&gt;Accented Button&lt;/button&gt;</div>
+            </div>
+        </div>
         <span>A hyperlink button that handles a Click event.</span>
         <button class="hyperlink">Hyperlink Button</button>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="json-block">&lt;button class=&quot;hyperlink&quot;&gt;Hyperlink Button&lt;/button&gt;</div>
+            </div>
+        </div>
     <div>
     `;
 
