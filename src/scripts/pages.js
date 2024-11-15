@@ -17,6 +17,7 @@ function overviewPage() {
             <span class="settings-options-title">Title</span>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('titlebarsPage()')"><span>Titlebars</span>${icon.arrow}</div>
+                <div class="menu-button" onclick="navigateForward('buttonsPage()')"><span>Buttons</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('modalsPage()')"><span>Modals</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('accordionsPage()')"><span>Accordions</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('progressbarPage()')"><span>Progressbars</span>${icon.arrow}</div>
@@ -24,6 +25,9 @@ function overviewPage() {
             </div>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('devicePage()')"><span>Device Info</span>${icon.arrow}</div>
+            </div>
+            <div class="page-footer">
+                <button class="hyperlink" onclick="navigateForward('infoPage()')">More info</button>
             </div>
         </div>
     `;
@@ -226,6 +230,34 @@ function titlebarsPage() {
         <div class="settings-options">
             <div class="menu-button" onclick="navigateForward('titlebarInnerPage()')"><span>Default Titlebar</span>${icon.arrow}</div>
         </div>
+    <div>
+    `;
+
+    pageElements();
+}
+
+function buttonsPage() {
+    page = `buttons`;
+
+    titlebar.set(``);
+    titlebar.clear(true);
+    titlebar.show();
+    titlebar.back(`navigateBack('overviewPage()');`);
+
+    navigation.show();
+    content.classList.remove('max');
+    content.scrollTo(0,0);
+    content.style = ``;
+
+    content.innerHTML = `
+    <div class="page">
+        <span class="settings-title">Buttons</span>
+        <span>A simple button with text content.</span>
+        <button>Standard Button</button>
+        <span>Accent styled button.</span>
+        <button class="accent">Accent Style Button</button>
+        <span>A hyperlink button that handles a Click event.</span>
+        <button class="hyperlink">Hyperlink Button</button>
     <div>
     `;
 

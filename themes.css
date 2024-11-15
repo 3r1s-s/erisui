@@ -3,18 +3,18 @@
     --app-link: #382a83;
 
     --app-100: #ffffff;
-    --app-200: #f4f4f9;
-    --app-300: #e5e5f2;
-    --app-400: #d9d9e6;
-    --app-500: #c4c4d5;
-    --app-600: #b3b3c4;
-    --app-700: #9f9fb0;
-    --app-800: #8d8d9c;
-    --app-900: #7a7a89;
+    --app-200: #efedfa;
+    --app-300: #e9e6ff;
+    --app-400: #d5d1f3;
+    --app-500: #c0bbe7;
+    --app-600: #b0abd9;
+    --app-700: #9b96c3;
+    --app-800: #8985ac;
+    --app-900: #726f90;
 
     --app-accent: #382a83;
     
-    --titlebar: rgba(229, 229, 242, 0.8);
+    --titlebar: rgba(239, 236, 255, 0.8);
 
     --app-blue: #1f6bff;
     --app-red: #e84136;
@@ -127,7 +127,7 @@
     --modal-800: var(--app-500);
     --modal-900: var(--app-600);
 
-    --titlebar: rgba(24, 25, 38, 0.8);
+    --titlebar: rgba(34, 36, 57, 0.8);
 
     --app-blue: #8aadf4;
     --app-red: #ed8796;

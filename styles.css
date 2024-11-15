@@ -12,7 +12,7 @@
 
 :root {
     --app-text: #e8e1f2;
-    --app-link: #5b7cff;
+    --app-link: #a899ff;
     --app-100: #020102;
     --app-200: #070609;
     --app-300: #0e0d13;
@@ -101,6 +101,23 @@ body {
 
 button, input {
     font-family: 'GG Sans', sans-serif;
+}
+
+button {
+    border: none;
+    background: var(--app-500);
+    width: max-content;
+    border-radius: 15px;
+    padding: 8px 20px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    font-weight: 500;
+    font-family: 'GG Sans';
+    transition: background 0.2s cubic-bezier(.2,0,0,1);
+}
+
+button:active {
+    background: var(--app-400);
 }
 
 ul, ol {
@@ -315,6 +332,9 @@ iframe {
     overflow: auto;
     overscroll-behavior: initial;
     transition: transform 200ms cubic-bezier(.2,0,0,1);
+
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .content.max {
@@ -665,7 +685,7 @@ iframe {
     flex-wrap: nowrap;
     overflow-x: auto;
     padding: 8px 16px;
-    mask-image: linear-gradient(to right, transparent 0%, #000 5%, #000 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 calc(0% + 15px), #000 calc(100% - 15px), transparent 100%);
     scrollbar-width: none;
 }
 
@@ -737,6 +757,17 @@ iframe {
 .checked .toggle svg {
     opacity: 1;
     color: var(--app-text);
+}
+
+.page-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.settings .page-footer {
+    margin: 0 20px;
 }
 
 .alert-outer {
@@ -976,6 +1007,30 @@ iframe {
     -ms-user-select: text;
     user-select: text;
     text-wrap: nowrap;
+}
+
+button.hyperlink {
+    background: transparent;
+    padding: 5px 10px;
+    border: none;
+    color: var(--app-link);
+    width: fit-content;
+    font-size: 0.75em;
+    transition: opacity 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+button.hyperlink:active {
+    background: transparent;
+    opacity: 0.6;
+}
+
+button.accent {
+    background-color: var(--brand-purple);
+    color: var(--app-text);
+}
+
+button.accent:active {
+    background-color: var(--brand-purple-dark);
 }
 
 .md > p, .md > span, .md > blockquote > p {
