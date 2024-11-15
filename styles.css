@@ -1018,6 +1018,7 @@ iframe {
     padding: 20px;
     background: var(--app-100);
     border: 1px solid var(--app-500);
+    color: #fff;
     border-radius: 20px;
     box-sizing: border-box;
     font-family: 'Reddit Mono', consolas;
@@ -1043,6 +1044,18 @@ iframe {
     border-radius: 15px;
     background: #00000094;
     box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.accordion.open .json-block {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 button.hyperlink {
