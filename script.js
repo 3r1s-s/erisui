@@ -207,11 +207,9 @@ function navigateForward(topage) {
 
 function navigateBack(topage) {
     content.classList.add('right-back');
-    content.style.transform = `translateX(35%)`;
     setTimeout(() => {
         content.classList.remove('right-back');
         content.classList.add('left-back');
-        content.style.transform = `translateX(-35%)`;
         eval(topage);
         setTimeout(() => {
             content.classList.remove('left-back');
