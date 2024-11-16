@@ -218,46 +218,46 @@ function navigateBack(topage) {
 }
 
 function backGesture() {
-    let touchStart = 0;
-    let touchEnd = 0;
-    let touchY = 0;
+    // let touchStart = 0;
+    // let touchEnd = 0;
+    // let touchY = 0;
 
-    window.addEventListener('touchstart', function(event) {
-        if (event.target !== content) return;
+    // window.addEventListener('touchstart', function(event) {
+    //     if (event.target !== content) return;
 
-        touchStart = event.touches[0].clientX;
-        touchY = event.touches[0].clientY;
+    //     touchStart = event.touches[0].clientX;
+    //     touchY = event.touches[0].clientY;
 
-        if (touchStart < 20) {
-            content.classList.add('gesture');
-        }
-    }, false);
+    //     if (touchStart < 20) {
+    //         content.classList.add('gesture');
+    //     }
+    // }, false);
     
-    window.addEventListener('touchmove', function(event) {
-        if (event.target !== content) return;
+    // window.addEventListener('touchmove', function(event) {
+    //     if (event.target !== content) return;
 
-        touchEnd = event.touches[0].clientX;
-        let delta = touchEnd - touchStart;
-        if (delta > 0 && touchStart < 20) {
-            content.style.transform = `translateX(${Math.pow(delta, 0.5)}px)`;
-        }
-    }, false);
+    //     touchEnd = event.touches[0].clientX;
+    //     let delta = touchEnd - touchStart;
+    //     if (delta > 0 && touchStart < 20) {
+    //         content.style.transform = `translateX(${Math.pow(delta, 0.5)}px)`;
+    //     }
+    // }, false);
     
-    window.addEventListener('touchend', function(event) {
-        if (event.target !== content) return;
+    // window.addEventListener('touchend', function(event) {
+    //     if (event.target !== content) return;
 
-        content.classList.add('gesture-after');
-        content.classList.remove('gesture');
+    //     content.classList.add('gesture-after');
+    //     content.classList.remove('gesture');
 
-        if (touchStart < 20 && touchEnd - touchStart > 100) {
-            if (back) {
-                navigateBack(back);
-            } else {
-                content.style.transform = `translateX(0)`;
-            }
-        }
-        content.classList.remove('gesture-after');
-    }, false);
+    //     if (touchStart < 20 && touchEnd - touchStart > 100) {
+    //         if (back) {
+    //             navigateBack(back);
+    //         } else {
+    //             content.style.transform = `translateX(0)`;
+    //         }
+    //     }
+    //     content.classList.remove('gesture-after');
+    // }, false);
 }
 
 function pageElements() {
