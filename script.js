@@ -244,14 +244,14 @@ function backGesture() {
         touchEnd = event.touches[0].clientX;
         let delta = touchEnd - touchStart;
         if (delta > 0 && touchStart < 20) {
-            pulltab.style.transform = `translateX(${Math.min(-15, Math.pow(delta, 0.8) - 120)}px)`;
+            pulltab.style.transform = `translateX(${Math.min(-15, Math.pow(delta, 1.1) - 120)}px)`;
         }
     }, false);
     
     window.addEventListener('touchend', function(event) {
         if (touchStart < 20 && touchEnd - touchStart > 100) {
-            if (back) {
-                navigateBack(back);
+            if (document.querySelector('.titlebar-back').onclick) {
+                document.querySelector('.titlebar-back').onclick();
             }
         }
         pulltab.classList.remove('gesture');
