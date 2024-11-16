@@ -218,46 +218,45 @@ function navigateBack(topage) {
 }
 
 function backGesture() {
-    // let touchStart = 0;
-    // let touchEnd = 0;
-    // let touchY = 0;
+    let touchStart = 0;
+    let touchEnd = 0;
+    let touchY = 0;
 
-    // window.addEventListener('touchstart', function(event) {
-    //     if (event.target !== content) return;
+    const pulltab = document.querySelector('.pulltab');
 
-    //     touchStart = event.touches[0].clientX;
-    //     touchY = event.touches[0].clientY;
+    pulltab.innerHTML = `
+        <div class="pulltab-icon">${icon.back}</div>
+    `;
 
-    //     if (touchStart < 20) {
-    //         content.classList.add('gesture');
-    //     }
-    // }, false);
+    window.addEventListener('touchstart', function(event) {
+
+        touchStart = event.touches[0].clientX;
+        touchY = event.touches[0].clientY;
+
+        if (touchStart < 20) {
+            pulltab.classList.add('gesture');
+            pulltab.style.top = `${touchY}px`;
+        }
+    }, false);
     
-    // window.addEventListener('touchmove', function(event) {
-    //     if (event.target !== content) return;
+    window.addEventListener('touchmove', function(event) {
 
-    //     touchEnd = event.touches[0].clientX;
-    //     let delta = touchEnd - touchStart;
-    //     if (delta > 0 && touchStart < 20) {
-    //         content.style.transform = `translateX(${Math.pow(delta, 0.5)}px)`;
-    //     }
-    // }, false);
+        touchEnd = event.touches[0].clientX;
+        let delta = touchEnd - touchStart;
+        if (delta > 0 && touchStart < 20) {
+            pulltab.style.transform = `translateX(${Math.min(-15, Math.pow(delta, 0.8) - 120)}px)`;
+        }
+    }, false);
     
-    // window.addEventListener('touchend', function(event) {
-    //     if (event.target !== content) return;
-
-    //     content.classList.add('gesture-after');
-    //     content.classList.remove('gesture');
-
-    //     if (touchStart < 20 && touchEnd - touchStart > 100) {
-    //         if (back) {
-    //             navigateBack(back);
-    //         } else {
-    //             content.style.transform = `translateX(0)`;
-    //         }
-    //     }
-    //     content.classList.remove('gesture-after');
-    // }, false);
+    window.addEventListener('touchend', function(event) {
+        if (touchStart < 20 && touchEnd - touchStart > 100) {
+            if (back) {
+                navigateBack(back);
+            }
+        }
+        pulltab.classList.remove('gesture');
+        pulltab.style.transform = '';
+    }, false);
 }
 
 function pageElements() {
