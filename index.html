@@ -65,5 +65,16 @@
 <script src="src/scripts/tenor.js"></script>
 <script src="src/scripts/pages.js"></script>
 <script src="script.js"></script>
+<script>
+    navigation.set([
+        { name: 'Overview', icon: icon.kit, action: 'overviewPage()' },
+        { name: 'Info', icon: icon.kit, action: 'infoPage()' },
+    ]);
+
+    navigation.show();
+    setTheme();
+    backGesture();
+    overviewPage();
+</script>
 </body>
 </html>

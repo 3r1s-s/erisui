@@ -363,6 +363,15 @@ iframe {
     padding: 0;
 }
 
+.content.gesture {
+    transition: none;
+}
+
+.content.gesture-after {
+    transition: none;
+    transform: translateX(0);
+}
+
 .content.left {
     transition: transform 200ms cubic-bezier(1,0,0,0.2);
     transform: translateX(-35%);
@@ -375,12 +384,10 @@ iframe {
 
 .content.left-back {
     transition: none;
-    transform: translateX(-35%);
 }
 
 .content.right-back {
     transition: transform 200ms cubic-bezier(1,0,0,0.2);
-    transform: translateX(35%);
 }
 
 .form {

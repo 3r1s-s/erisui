@@ -1,6 +1,7 @@
 const content = document.querySelector('.content');
 const app = document.querySelector('.app');
 let page;
+let back;
 
 const titlebar = (() => {
     const titlebar = document.querySelector('.titlebar');
@@ -17,9 +18,13 @@ const titlebar = (() => {
                 backButton.style.display = 'flex';
                 backButton.setAttribute('onclick', action);
                 backButton.innerHTML = `${icon.back}`;
+
+                back = action;
             } else {
                 backButton.style.display = 'none';
                 backButton.onclick = null;
+
+                back = null;
             }
         },
         type(val) {
@@ -167,15 +172,6 @@ const device = {
     userAgent: navigator.userAgent
 };
 
-navigation.set([
-    { name: 'Overview', icon: icon.kit, action: 'overviewPage()' },
-    { name: 'Info', icon: icon.kit, action: 'infoPage()' },
-]);
-
-navigation.show();
-setTheme();
-overviewPage();
-
 function toggleSetting(id) {
     const element = document.getElementById(id);
     if (settings.get(id) === true) {
@@ -211,14 +207,59 @@ function navigateForward(topage) {
 
 function navigateBack(topage) {
     content.classList.add('right-back');
+    content.style.transform = `translateX(35%)`;
     setTimeout(() => {
         content.classList.remove('right-back');
         content.classList.add('left-back');
+        content.style.transform = `translateX(-35%)`;
         eval(topage);
         setTimeout(() => {
             content.classList.remove('left-back');
         }, 1);
     }, 100);
+}
+
+function backGesture() {
+    let touchStart = 0;
+    let touchEnd = 0;
+    let touchY = 0;
+
+    window.addEventListener('touchstart', function(event) {
+        if (event.target !== content) return;
+
+        touchStart = event.touches[0].clientX;
+        touchY = event.touches[0].clientY;
+
+        if (touchStart < 20) {
+            content.classList.add('gesture');
+        }
+    }, false);
+    
+    window.addEventListener('touchmove', function(event) {
+        if (event.target !== content) return;
+
+        touchEnd = event.touches[0].clientX;
+        let delta = touchEnd - touchStart;
+        if (delta > 0 && touchStart < 20) {
+            content.style.transform = `translateX(${Math.pow(delta, 0.5)}px)`;
+        }
+    }, false);
+    
+    window.addEventListener('touchend', function(event) {
+        if (event.target !== content) return;
+
+        content.classList.add('gesture-after');
+        content.classList.remove('gesture');
+
+        if (touchStart < 20 && touchEnd - touchStart > 100) {
+            if (back) {
+                navigateBack(back);
+            } else {
+                content.style.transform = `translateX(0)`;
+            }
+        }
+        content.classList.remove('gesture-after');
+    }, false);
 }
 
 function pageElements() {
