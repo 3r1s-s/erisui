@@ -22,7 +22,6 @@ function overviewPage() {
                 <div class="menu-button" onclick="navigateForward('progressbarPage()')"><span>Progressbars</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('themesPage()')"><span>Themes</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('examplePage()')"><span>Example</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="navigateForward('musicPage()')"><span>Music</span>${icon.arrow}</div>
             </div>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('devicePage()')"><span>Device Info</span>${icon.arrow}</div>
@@ -450,33 +449,6 @@ Doo-doo-doo-doo, doo-doo-doo
 Ooh-ooh, ooh-ooh
 Ooh-hoo
         </span>
-    <div>
-    `;
-
-    pageElements();
-}
-
-function musicPage() {
-    page = `example`;
-
-    titlebar.set(``);
-    titlebar.type('clear');
-    titlebar.show();
-    titlebar.back(`navigateBack('overviewPage()');`);
-
-    navigation.show();
-    content.classList.remove('max');
-    content.scrollTo(0,0);
-    content.style = ``;
-
-    const artworkURL = 'src/assets/videos/pearl_jam-ten.mp4';
-
-    content.innerHTML = `
-    <div class="music">
-        <video playsinline autoplay muted loop src="${artworkURL}" class="album-art"></video>
-        <div class="blurred-background">
-            <video playsinline autoplay muted loop src="${artworkURL}"></video>
-        </div>
     <div>
     `;
 
