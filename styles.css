@@ -220,7 +220,7 @@ iframe {
 }
 
 .titlebar.large + .content {
-    --titlebar-height: 100px;
+    --titlebar-height: 90px;
 }
 
 .titlebar.trans {
