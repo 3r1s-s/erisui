@@ -217,6 +217,14 @@ function navigateBack(topage) {
     }, 100);
 }
 
+function navigateTab(topage) {
+    content.classList.add('tab-in');
+    eval(topage);
+    setTimeout(() => {
+        content.classList.remove('tab-in');
+    }, 1);
+}
+
 function backGesture() {
     let touchStart = 0;
     let touchEnd = 0;

@@ -177,6 +177,11 @@ iframe {
     left: 0;
     overflow: hidden;
 
+    transition: transform 200ms cubic-bezier(.2,0,0,1);
+
+}
+
+.app.transition {
     transition: transform 0.5s cubic-bezier(.2,0,0,1), 
     opacity 0.5s cubic-bezier(.2,0,0,1),
     border-radius 0.5s cubic-bezier(.2,0,0,1);
@@ -353,14 +358,21 @@ iframe {
     background: var(--app-100);
     overflow: auto;
     overscroll-behavior: initial;
-    transition: transform 200ms cubic-bezier(.2,0,0,1);
+    transition: transform 200ms cubic-bezier(.2,0,0,1), opacity 200ms cubic-bezier(.2,0,0,1);
 
     max-width: 900px;
     margin: 0 auto;
+    opacity: 1;
 }
 
 .content.max {
     padding: 0;
+}
+
+.content.tab-in {
+    transition: none;
+    transform: scale(0.99);
+    opacity: 0.8;
 }
 
 .content.left {
