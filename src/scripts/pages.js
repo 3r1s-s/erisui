@@ -379,8 +379,7 @@ function examplePage() {
 
     content.innerHTML = `
     <div class="page">
-        <span style="white-space: pre-line;">
-Hey-hey-hey
+        <span style="white-space: pre-line;">Hey-hey-hey
 Yeah-ah
 
 Sheets of empty canvas, untouched sheets of clay

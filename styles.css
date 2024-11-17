@@ -270,7 +270,7 @@ iframe {
     position: relative;
 }
 
-.titlebar.trans .titlebar-back::before {
+.titlebar.trans .titlebar-back::before, .titlebar.large .titlebar-back::before {
     content: '';
     position: absolute;
     top: 4px;

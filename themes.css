@@ -141,6 +141,12 @@
         background: var(--modal-100);
         border: 2px solid var(--modal-300);
     }
+
+    .titlebar.trans .titlebar-back::before, .titlebar.large .titlebar-back::before {
+        background: var(--app-300);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
 }
 
 .catppuccin-macchiato {
