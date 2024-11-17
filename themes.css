@@ -134,7 +134,7 @@
 
     .content {
         padding: 0;
-        margin: calc(var(--titlebar-height) + env(safe-area-inset-top) + 10px) auto calc(var(--nav-height) + env(safe-area-inset-bottom)) auto;
+        margin: calc(var(--titlebar-height) + env(safe-area-inset-top)) auto calc(var(--nav-height) + env(safe-area-inset-bottom)) auto;
     }
 
     .tooltip {
