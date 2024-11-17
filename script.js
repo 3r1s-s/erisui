@@ -236,6 +236,8 @@ function backGesture() {
         if (touchStart < 20) {
             pulltab.classList.add('gesture');
             pulltab.style.top = `${touchY}px`;
+
+            content.style = `overflow: hidden;`;
         }
     }, false);
     
@@ -256,6 +258,8 @@ function backGesture() {
         }
         pulltab.classList.remove('gesture');
         pulltab.style.transform = '';
+
+        content.style = ``;
     }, false);
 }
 
