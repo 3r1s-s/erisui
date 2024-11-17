@@ -78,29 +78,63 @@
     --modal-900: var(--app-900);
 
     --titlebar: rgba(12, 12, 12, 0.8);
+}
 
-    .chat .chat-wrapper {
+.acrylic {
+    --app-text: #e7e9f3;
+    --app-link: #3679f0;
+    --app-100: #000000df;
+    --app-200: #ffffff14;
+    --app-300: #ffffff0d;
+    --app-400: #ffffff08;
+    --app-500: #ffffff06;
+    --app-600: #ffffff04;
+    --app-700: #000000df;
+    --app-800: #000000bf;
+    --app-900: #ffffff47;
+
+    --modal-100: #202020;
+    --modal-200: #323232;
+    --modal-300: #202020;
+    --modal-400: #202020;
+    --modal-500: #252525;
+    --modal-600: #2b2b2b;
+    --modal-700: #2f2f2f;
+    --modal-800: #343434;
+    --modal-900: var(--app-900);
+
+    --titlebar: #ffffff0d;
+
+    body {
+        background-image: url(src/assets/images/bg/loomdark.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        background-color: #fff;
+    }
+
+    .app {
+        backdrop-filter: blur(30px) saturate(125%);
         background: var(--app-100);
     }
 
-    .chat:active .chat-wrapper {
-        background: var(--app-500);
+    .settings-options {
+        background: transparent;
     }
 
-    .chat.favourite .chat-wrapper {
-        background: var(--app-300);
+    .content, .titlebar.large {
+        background: transparent;
     }
 
-    .chat.favourite:active .chat-wrapper {
-        background: var(--app-500);
+    .content {
+        padding: 0;
+        margin: calc(var(--titlebar-height) + env(safe-area-inset-top)) auto calc(var(--nav-height) + env(safe-area-inset-bottom)) auto;
     }
 
-    .search-outer {
-        background: var(--app-300);
-    }
-
-    .search, .search-full {
-        background: var(--app-200);
+    .tooltip {
+        background: var(--modal-100);
+        border: 2px solid var(--modal-300);
     }
 }
 

@@ -349,6 +349,13 @@ function themesPage() {
                         <span>Black</span>
                     </div>
                 </div>
+                <div class="theme-option acrylic" onclick="theme.set('acrylic')">
+                    <div class="theme-colour">
+                    </div>
+                    <div class="theme-name">
+                        <span>Acrylic</span>
+                    </div>
+                </div>
             </div>
         </div>
     `;

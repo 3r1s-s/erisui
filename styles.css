@@ -199,7 +199,7 @@ iframe {
     align-items: center;
     z-index: 2;
     padding: env(safe-area-inset-top) 5px 0px 5px;
-    box-sizing: border-box;
+    box-sizing: content-box;
     background-color: var(--titlebar);
     border-bottom: 2px solid var(--app-600);
     font-weight: 600;
@@ -208,7 +208,7 @@ iframe {
 }
 
 .titlebar.large {
-    --titlebar-height: 90px;
+    --titlebar-height: 100px;
 
     display: flex;
     flex-direction: column;
@@ -220,7 +220,7 @@ iframe {
 }
 
 .titlebar.large + .content {
-    --titlebar-height: 90px;
+    --titlebar-height: 100px;
 }
 
 .titlebar.trans {
@@ -815,6 +815,7 @@ iframe {
     background: var(--modal-400);
     color: var(--modal-text);
     width: 80%;
+    max-width: 360px;
     align-self: center;
     border-radius: 40px;
     overflow: hidden;
