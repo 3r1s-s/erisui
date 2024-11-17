@@ -105,8 +105,10 @@
 
     --titlebar: #ffffff0d;
 
+    --wallpaper-url: url("src/assets/images/bg/6.jpg");
+
     body {
-        background-image: url(src/assets/images/bg/6.jpg);
+        background-image: var(--wallpaper-url);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -153,13 +155,17 @@
     }
 
     .pulltab {
-        backdrop-filter: blur(30px) saturate(125%);
-        -webkit-backdrop-filter: blur(30px) saturate(125%);
+        background: var(--modal-300);
     }
     
     .json-block {
         background: #00000094;
     }
+}
+
+.acrylic.disable-backdrop-blur .app {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .catppuccin-macchiato {

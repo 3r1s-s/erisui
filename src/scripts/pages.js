@@ -358,9 +358,13 @@ function themesPage() {
                     </div>
                 </div>
             </div>
+            <div class="settings-options">
+                <div class="menu-button" id="disableBackdropBlur" onclick="toggleSetting('disableBackdropBlur');setTheme()"><span>Disable Backdrop Blur</span><div class="toggle">${icon.check}</div></div>
+            </div>
         </div>
     `;
 
+    pageElements();
     setTheme();
 }
 

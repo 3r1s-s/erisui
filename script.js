@@ -319,6 +319,10 @@ function setTheme() {
             document.querySelector(`.theme-option.dark`).classList.add('selected');
         }
     }
+
+    if (settings.get('disableBackdropBlur')) {
+        document.querySelector('html').classList.add('disable-backdrop-blur');
+    }
 }
 
 function formatSize(bytes) {
