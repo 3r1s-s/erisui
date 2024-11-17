@@ -199,7 +199,7 @@ iframe {
     align-items: center;
     z-index: 2;
     padding: env(safe-area-inset-top) 5px 0px 5px;
-    box-sizing: content-box;
+    box-sizing: border-box;
     background-color: var(--titlebar);
     border-bottom: 2px solid var(--app-600);
     font-weight: 600;
