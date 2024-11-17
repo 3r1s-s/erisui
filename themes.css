@@ -116,6 +116,7 @@
 
     .app {
         backdrop-filter: blur(30px) saturate(125%);
+        -webkit-backdrop-filter: blur(30px) saturate(125%);
         background: var(--app-100);
     }
 
@@ -133,8 +134,7 @@
     }
 
     .content {
-        padding: 0;
-        margin: calc(var(--titlebar-height) + env(safe-area-inset-top)) auto calc(var(--nav-height) + env(safe-area-inset-bottom)) auto;
+        clip-path: polygon(0 calc(var(--titlebar-height) + env(safe-area-inset-top) + 10px), 100% calc(var(--titlebar-height) + env(safe-area-inset-top) + 10px), 100% calc(100% - var(--nav-height) - env(safe-area-inset-bottom)), 0 calc(100% - var(--nav-height) - env(safe-area-inset-bottom)));
     }
 
     .tooltip {
@@ -146,6 +146,13 @@
         background: var(--app-300);
         -webkit-backdrop-filter: none;
         backdrop-filter: none;
+    }
+
+    .pulltab {
+        background: var(--modal-300);
+    }
+    .json-block {
+        background: #00000094;
     }
 }
 
