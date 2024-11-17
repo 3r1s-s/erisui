@@ -457,3 +457,28 @@ Ooh-hoo
     document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
     document.querySelector('.nav').getElementsByClassName('nav-item')[1].classList.add('active');
 }
+
+function musicPage() {
+    page = `example`;
+
+    titlebar.set(`Title`);
+    titlebar.type('large');
+    titlebar.show();
+    titlebar.back(`navigateBack('overviewPage()');`);
+
+    navigation.show();
+    content.classList.remove('max');
+    content.scrollTo(0,0);
+    content.style = ``;
+
+    content.innerHTML = `
+    <div class="music">
+        <video playsinline autoplay muted loop src=""></video>
+    <div>
+    `;
+
+    pageElements();
+
+    document.querySelectorAll('.active').forEach(element => element.classList.remove('active'));
+    document.querySelector('.nav').getElementsByClassName('nav-item')[1].classList.add('active');
+}
