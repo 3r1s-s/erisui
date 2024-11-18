@@ -152,6 +152,10 @@ String.prototype.sanitize = function() {
     return this.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;').replace(/`/g, '&#96;').replace(/'/g, '&#39;');
 };
 
+String.prototype.code = function() { 
+    return `<div class="json-block">${this.sanitize()}</div>`;
+};
+
 const device = {
     is: {
       iPhone: /iPhone/.test(navigator.userAgent),

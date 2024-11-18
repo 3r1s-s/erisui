@@ -22,6 +22,7 @@ function overviewPage() {
                 <div class="menu-button" onclick="navigateForward('progressbarPage()')"><span>Progressbars</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('themesPage()')"><span>Themes</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('examplePage()')"><span>Example</span>${icon.arrow}</div>
+                <div class="menu-button" onclick="navigateForward('iconsPage()')"><span>Icons</span>${icon.arrow}</div>
             </div>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('devicePage()')"><span>Device Info</span>${icon.arrow}</div>
@@ -149,6 +150,12 @@ function accordionsPage() {
                 <div class="menu-button" onclick="navigateForward('infoPage()')"><span>Information</span>${icon.arrow}</div>
             </div>
         </div>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                ${'<div class="accordion">\n<div class="accordion-title" onclick="accordion(this)"><span>Accordion with a button</span>${icon.dropdown}</div>\n<div class="accordion-content">\n<span>Hello World!</span>\n</div>\n</div>'.code()}
+            </div>
+        </div>
     <div>
     `;
 
@@ -174,12 +181,30 @@ function progressbarPage() {
         <div class="progressbar">
             <span class="progress" style="width: 50%"></span>
         </div>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                ${'<div class="progressbar">\n<span class="progress" style="width: 50%"></span>\n</div>'.code()}
+            </div>
+        </div>
         <span>Intermediate progressbar</span>
         <div class="progressbar">
             <span class="progress intermediate"></span>
         </div>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                ${'<div class="progressbar">\n<span class="progress intermediate"></span>\n</div>'.code()}
+            </div>
+        </div>
         <span>Loading spinner</span>
         <span class="loader animate">${icon.loader}</span>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                ${'<span class="loader animate">${icon.loader}</span>'.code()}
+            </div>
+        </div>
     <div>
     `;
 
@@ -206,6 +231,12 @@ function titlebarsPage() {
             <div class="menu-button" onclick="navigateForward('titlebarInnerPage(0)')"><span>Clear Titlebar</span>${icon.arrow}</div>
             <div class="menu-button" onclick="navigateForward('titlebarInnerPage(1)')"><span>Default Titlebar</span>${icon.arrow}</div>
         </div>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+            ${'titlebar.set("Title");\ntitlebar.type("large");\ntitlebar.show();'.code()}
+            </div>
+        </div>
     <div>
     `;
 
@@ -227,9 +258,7 @@ function titlebarInnerPage(x) {
             <div class="accordion">
                 <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
                 <div class="accordion-content">
-                    <div class="json-block">titlebar.set(&quot;Title&quot;);
-titlebar.type();
-titlebar.show();</div>
+                    ${'titlebar.set("Title");\ntitlebar.type("");\ntitlebar.show();'.code()}
                 </div>
             </div>
         <div>
@@ -246,9 +275,7 @@ titlebar.show();</div>
             <div class="accordion">
                 <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
                 <div class="accordion-content">
-                    <div class="json-block">titlebar.set(&quot;&quot;);
-titlebar.type(&quot;clear&quot;);
-titlebar.show();</div>
+                    ${'titlebar.set("Title");\ntitlebar.type("clear");\ntitlebar.show();'.code()}
                 </div>
             </div>
         <div>
@@ -281,25 +308,25 @@ function buttonsPage() {
         <span>A simple button with text content.</span>
         <button>Standard Button</button>
         <div class="accordion">
-                <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
-                <div class="accordion-content">
-                    <div class="json-block">&lt;button&gt;Button&lt;/button&gt;</div>
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                ${'<button>Standard Button</button>'.code()}
             </div>
         </div>
         <span>Accent styled button.</span>
         <button class="accent">Accent Style Button</button>
         <div class="accordion">
             <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
-                <div class="accordion-content">
-                    <div class="json-block">&lt;button class=&quot;accent&quot;&gt;Accented Button&lt;/button&gt;</div>
+            <div class="accordion-content">
+                ${'<button class="accent">Accent Style Button</button>'.code()}
             </div>
         </div>
         <span>A hyperlink button that handles a Click event.</span>
         <button class="hyperlink">Hyperlink Button</button>
         <div class="accordion">
             <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
-                <div class="accordion-content">
-                    <div class="json-block">&lt;button class=&quot;hyperlink&quot;&gt;Hyperlink Button&lt;/button&gt;</div>
+            <div class="accordion-content">
+                ${'<button class="hyperlink">Hyperlink Button</button>'.code()}
             </div>
         </div>
     <div>
@@ -459,6 +486,39 @@ Doo-doo-doo-doo, doo-doo-doo
 Ooh-ooh, ooh-ooh
 Ooh-hoo
         </span>
+    <div>
+    `;
+
+    pageElements();
+}
+
+function iconsPage() {
+    page = `icons`;
+
+    titlebar.set(`Icons`);
+    titlebar.type('large');
+    titlebar.show();
+    titlebar.back(`navigateBack('overviewPage()');`);
+
+    navigation.show();
+    content.classList.remove('max');
+    content.scrollTo(0,0);
+    content.style = ``;
+
+    content.innerHTML = `
+    <div class="page">
+        <span>Instead of writing out svgs for each icon, you can call the icons, and define them in the icons object for reuse.</span>
+        <span style="display:flex;flex-direction:row;flex-wrap:wrap;gap:10px">
+            ${icon.home}${icon.settings}${icon.arrow}
+        </span>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                <span>
+                    ${'${icon.iconName}'.code()}
+                </span>
+            </div>
+        </div>
     <div>
     `;
 
