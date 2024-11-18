@@ -416,75 +416,53 @@ function examplePage() {
 
     content.innerHTML = `
     <div class="page">
-        <span style="white-space: pre-line;">Hey-hey-hey
-Yeah-ah
+        <span style="white-space: pre-line;">I admit it
+What's to say
+I'll relive it
+Without pain
 
-Sheets of empty canvas, untouched sheets of clay
-Were laid spread out before me, as her body once did
-All five horizons revolved around her soul as the Earth to the Sun
-Now, the air I tasted and breathe has taken a turn
+Backstreet lover on the side of the road
+I got a bomb in my temple that is gonna explode
+I got a 16-gauge buried under my clothes, I pray
 
-Mmm, and all I taught her was everything
-Mmm-hmm, I know she gave me all that she wore
+Once upon a time
+I could control myself
+Ooh, once upon a time
+I could lose myself, yeah
 
-And now my bitter hands chafe beneath the clouds
-Of what was everything
-All the pictures had all been washed in black
-Tattooed everything
+Oh, try and mimic
+What's insane
+I am in it
+Where do I stand?
 
-I take a walk outside
-I'm surrounded by some kids at play
-I can feel their laughter
-So, why do I sear?
+Indian summer and I hate the heat
+I got a backstreet lover on the passenger seat
+I got my hand in my pocket, so determined, discreet
+I pray
 
-Mmm, and twisted thoughts that spin 'round my head
-I'm spinning, oh-oh, I'm spinning
-How quick the Sun can drop away?
+Once upon a time
+I could control myself
+Ooh, once upon a time
+I could lose myself, yeah
 
-And now my bitter hands cradle broken glass
-Of what was everything
-All the pictures have all been washed in black
-Tattooed everything
+You think I got my eyes closed
+But I'm looking at you the whole fucking time
 
-All the love gone bad turned my world to black
-Tattooed all I see, all that I am
-All I'll be, yeah-yeah
-Oh-oh, oh-oh, ooh
+Once upon a time
+I could control myself
+Ooh, once upon a time
+I could lose myself, yeah
 
-I know someday, you'll have a beautiful life
-I know you'll be a star in somebody else's sky
-But why, why, why can't it be
-Oh, can't it be mine?
-
-Ooh
-Ah, yeah
-Ah, ooh-ooh
-
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo (oh, oh-yeah)
-
-Doo-doo-doo-doo, doo-doo-doo
-Doo doo doo, doo, doo-doo-doo (ah-ah)
-Doo-doo-doo-doo, doo-doo-doo (ah-ah)
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo (yeah)
-Doo-doo-doo-doo, doo-doo-doo (ah-ah, yeah)
-Doo-doo-doo-doo, doo-doo-doo (yeah, ah)
-Doo-doo-doo-doo, doo-doo-doo (yeah-yeah-yeah)
-Doo-doo-doo-doo, doo-doo-doo
-Doo-doo-doo-doo, doo-doo-doo (oh-oh)
-
-Oh-oh, oh-oh
-Doo-doo-doo-doo, doo-doo-doo
-Ooh-ooh, ooh-ooh
-Ooh-hoo
+Ooh, once upon a time
+I could love myself, yeah
+Once upon a time
+I could love you, yeah, yeah, yeah
+Once
+Once
+Once
+Once
+Yeah, once, once, yeah, yeah
+Yeah, yeah, yeah, yeah, yeah
         </span>
     <div>
     `;
