@@ -1365,3 +1365,39 @@ button.accent:active {
         transform: translateX(100%) scaleX(0.3)
     }
 }
+
+@media only screen and (min-width: 900px) {
+    .titlebar.large .title {
+        max-width: calc(900px + -30px);
+        width: 100%;
+        left: 0;
+        right: 0;
+        position: fixed;
+        margin: 0px auto;
+    }
+
+    .nav {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 100px;
+        height: calc(var(--nav-height) - 20px);
+        margin: 10px auto;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .nav-item {
+        border-radius: 100px;
+        height: calc(var(--nav-height) - 20px);
+    }
+
+    .nav-item-inner {
+        flex-direction: row;
+    }
+
+    .app {
+        --nav-height: 60px;
+    }
+}
