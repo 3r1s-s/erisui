@@ -138,9 +138,13 @@
     .content {
         clip-path: polygon(0 calc(var(--titlebar-height) + env(safe-area-inset-top)), 100% calc(var(--titlebar-height) + env(safe-area-inset-top)), 100% calc(100% - var(--nav-height) - env(safe-area-inset-bottom)), 0 calc(100% - var(--nav-height) - env(safe-area-inset-bottom)));
     }
-
+    
     .titlebar.large + .content {
         clip-path: polygon(0 calc(var(--titlebar-height) + env(safe-area-inset-top) + 10px), 100% calc(var(--titlebar-height) + env(safe-area-inset-top) + 10px), 100% calc(100% - var(--nav-height) - env(safe-area-inset-bottom)), 0 calc(100% - var(--nav-height) - env(safe-area-inset-bottom)));
+    }
+    
+    .content.max {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     .tooltip {

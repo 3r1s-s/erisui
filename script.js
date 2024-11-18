@@ -2,6 +2,7 @@ const content = document.querySelector('.content');
 const app = document.querySelector('.app');
 let page;
 let back;
+let name;
 
 const titlebar = (() => {
     const titlebar = document.querySelector('.titlebar');
