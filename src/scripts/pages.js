@@ -242,7 +242,7 @@ titlebar.show();</div>
 
         content.innerHTML = `
         <div class="page">
-            <span>This page uses a clear titlebar, it might has a back button.</span>
+            <span>This page uses a clear titlebar, it might have a back button.</span>
             <div class="accordion">
                 <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
                 <div class="accordion-content">
