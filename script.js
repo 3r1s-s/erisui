@@ -193,6 +193,18 @@ function accordion(element) {
     }
 }
 
+function toggleRadio(group, id) {
+    const items = document.querySelectorAll(`.radio-group[data-group="${group}"] .menu-button`);
+    items.forEach(item => {
+        item.classList.remove('selected');
+    });
+
+    const selectedItem = document.getElementById(id);
+    selectedItem.classList.add('selected');
+
+    settings.set(group, id);
+}
+
 function navigateForward(topage) {
     content.classList.add('left');
     setTimeout(() => {
@@ -279,6 +291,21 @@ function pageElements() {
         }
     });
 
+    const radioGroups = document.querySelectorAll('.radio-group');
+    radioGroups.forEach(group => {
+        const groupName = group.dataset.group;
+        const selectedId = settings.get(groupName);
+        if (selectedId) {
+            group.querySelectorAll('.menu-button').forEach(option => {
+                if (option.id === selectedId) {
+                    option.classList.add('selected');
+                } else {
+                    option.classList.remove('selected');
+                }
+            });
+        }
+    });
+
     document.querySelectorAll('.accordion').forEach(element => element.style.maxHeight = element.querySelector('.accordion-title').scrollHeight + "px");
 }
 
@@ -330,6 +357,16 @@ function setTheme() {
 
     if (settings.get('disableBackdropBlur')) {
         document.querySelector('html').classList.add('disable-backdrop-blur');
+    }
+
+    if (settings.get('acrylicBackground')) {
+        if (settings.get('acrylicBackground') === 'loom') {
+            document.querySelector('html').style.setProperty('--wallpaper-url', 'url(src/assets/images/bg/loomdark.png)');
+        } else if (settings.get('acrylicBackground') === 'bliss') {
+            document.querySelector('html').style.setProperty('--wallpaper-url', 'url(src/assets/images/bg/6.jpg)');
+        } else if (settings.get('acrylicBackground') === 'mojave') {
+            document.querySelector('html').style.setProperty('--wallpaper-url', 'url(src/assets/images/bg/10-14-Night.jpg)');
+        }
     }
 }
 

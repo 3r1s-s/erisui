@@ -371,7 +371,7 @@ iframe {
 
 .content.tab-in {
     transition: none;
-    transform: scale(0.99);
+    transform: scale(0.98);
     opacity: 0.8;
 }
 
@@ -791,6 +791,31 @@ iframe {
 .checked .toggle svg {
     opacity: 1;
     color: var(--app-text);
+}
+
+.radio {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 2px solid var(--app-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background: var(--app-200);
+    transition: 100ms ease-in-out;
+}
+
+.selected > .radio {
+    border: 4px solid var(--brand-purple);
+}
+
+:active > .radio {
+    border: 4px solid var(--app-800);
+}
+
+.selected:active > .radio {
+    border: 6px solid var(--brand-purple);
 }
 
 .page-footer {
