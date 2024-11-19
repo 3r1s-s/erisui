@@ -1372,7 +1372,7 @@ button.accent:active {
     }
     
     .titlebar.large .title {
-        max-width: calc(900px + -30px);
+        max-width: calc(900px + -40px);
         width: 100%;
         left: 0;
         right: 0;
