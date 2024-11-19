@@ -1367,6 +1367,10 @@ button.accent:active {
 }
 
 @media only screen and (min-width: 900px) {
+    .app {
+        --nav-height: 70px;
+    }
+    
     .titlebar.large .title {
         max-width: calc(900px + -30px);
         width: 100%;
@@ -1380,8 +1384,8 @@ button.accent:active {
         width: 100%;
         max-width: 600px;
         border-radius: 100px;
-        height: calc(var(--nav-height) - 20px);
-        margin: 10px auto;
+        height: calc(var(--nav-height) - 35px);
+        margin: 35px auto;
         position: fixed;
         bottom: 0;
         left: 0;
@@ -1390,14 +1394,10 @@ button.accent:active {
 
     .nav-item {
         border-radius: 100px;
-        height: calc(var(--nav-height) - 20px);
+        height: calc(var(--nav-height) - 35px);
     }
 
     .nav-item-inner {
         flex-direction: row;
-    }
-
-    .app {
-        --nav-height: 60px;
     }
 }
