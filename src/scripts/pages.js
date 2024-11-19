@@ -23,6 +23,7 @@ function overviewPage() {
                 <div class="menu-button" onclick="navigateForward('themesPage()')"><span>Themes</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('examplePage()')"><span>Example</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('iconsPage()')"><span>Icons</span>${icon.arrow}</div>
+                <div class="menu-button" onclick="navigateForward('textInputsPage()')"><span>Text Inputs</span>${icon.arrow}</div>
             </div>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('devicePage()')"><span>Device Info</span>${icon.arrow}</div>
@@ -494,6 +495,47 @@ function iconsPage() {
             <div class="accordion-content">
                 <span>
                     ${'${icon.iconName}'.code()}
+                </span>
+            </div>
+        </div>
+    <div>
+    `;
+
+    pageElements();
+}
+
+function textInputsPage() {
+    page = `textInputs`;
+
+    titlebar.set(`Text Inputs`);
+    titlebar.type('large');
+    titlebar.show();
+    titlebar.back(`navigateBack('overviewPage()');`);
+
+    navigation.show();
+    content.classList.remove('max');
+    content.scrollTo(0,0);
+    content.style = ``;
+
+    content.innerHTML = `
+    <div class="page">
+        <span>A simple text input, the icon is optional and can be anything</span>
+        <div class="text-input">
+            <input type="text" placeholder="Placeholder" autocomplete="off"/>${icon.search}
+        </div>
+        <span>A form</span>
+        <div class="form">
+            <input class="form-input" id="id" type="text" autocomplete="">
+            <label for="id">Label</label>
+        </div>
+        <div class="accordion">
+            <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+            <div class="accordion-content">
+                <span>
+                    ${'<div class="text-input"><input type="text" placeholder="Placeholder" autocomplete="off"/>${icon.search}</div>'.code()}
+                </span>
+                <span>
+                    ${'<div class="form"><input class="form-input" id="id" type="text" autocomplete=""><label for="id">Label</label></div>'.code()}
                 </span>
             </div>
         </div>

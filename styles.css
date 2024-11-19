@@ -452,6 +452,48 @@ iframe {
     font-size: .75em;
 }
 
+.text-input {
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 32px;
+    background: var(--app-300);
+    border-bottom: 2px solid var(--app-300);
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    position: relative;
+}
+
+.text-input input {
+    margin: 0;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-size: 1em;
+
+    outline: none;
+    border: none;
+    background: transparent;
+    caret-color: var(--brand-purple);
+    color: var(--app-text);
+
+    height: 100%;
+    flex-grow: 1;
+}
+
+.text-input svg {
+    width: 20px;
+    height: 20px;
+    padding: 0 10px;
+}
+
+.text-input.rounded {
+    padding: 0 10px;
+    border-radius: 100px;
+}
+
 .modal-outer {
     visibility: hidden;
     display: flex;
@@ -664,6 +706,10 @@ iframe {
     gap: 20px;
     margin: 20px 0;
     position: relative;
+}
+
+.settings-margin {
+    margin: 0 20px;
 }
 
 .settings-options {

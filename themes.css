@@ -165,6 +165,10 @@
     .json-block {
         background: #00000094;
     }
+
+    .form-input, .form label {
+        background: var(--modal-400);
+    }
 }
 
 .acrylic.disable-backdrop-blur .app {
