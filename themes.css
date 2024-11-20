@@ -169,6 +169,14 @@
     .form-input, .form label {
         background: var(--modal-400);
     }
+
+    .accordion .menu-button {
+        background: transparent;
+    }
+    
+    .accordion .menu-button:active {
+        background: var(--app-500);
+    }
 }
 
 .acrylic.disable-backdrop-blur .app {
