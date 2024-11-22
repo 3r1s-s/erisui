@@ -371,6 +371,8 @@ function setTheme() {
             document.querySelector('html').style.setProperty('--wallpaper-url', 'url(src/assets/images/bg/6.jpg)');
         } else if (settings.get('acrylicBackground') === 'mojave') {
             document.querySelector('html').style.setProperty('--wallpaper-url', 'url(src/assets/images/bg/10-14-Night.jpg)');
+        } else if (settings.get('acrylicBackground') === 'none') {
+            document.querySelector('html').style.setProperty('--wallpaper-url', '');
         }
     }
 }

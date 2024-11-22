@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErisUI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="themes.css">
+
+    <link rel="icon" type="image/png" href="src/assets/images/icon2-web.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="src/assets/images/icon-mobile.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0e0d13">
+    <meta name="background-color" content="#0e0d13">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body ontouchstart="">
+    <div class="alert-outer">
+        <div class="alert">
+            <div class="alert-inner">
+                
+            </div>
+            <div class="alert-options">
+            </div>
+        </div>
+    </div>
+    <div class="view-image-outer">
+        <div class="view-image">
+            <div class="view-image-inner">
+                
+            </div>
+            <div class="view-image-options">
+            </div>
+        </div>
+    </div>
+    <div class="modal-outer">
+        <div class="modal">
+            <div class="modal-inner">
+                
+            </div>
+            <div class="modal-options">
+            </div>
+        </div>
+    </div>
+    <div class="app">
+        <div class="titlebar" style="display: none;">
+            <span class="titlebar-back"></span>
+            <span class="title"></span>
+            <span class="titlebar-option"></span>
+        </div>
+        <div class="app-inner">
+            <div class="sidebar"></div>
+            <div class="content"></div>
+        </div>
+        <div class="nav" style="display: none;">
+            
+        </div>
+        <div class="pulltab"></div>
+    </div>
+<script src="src/scripts/icons.js"></script>
+<script src="src/scripts/modals.js"></script>
+<script src="src/scripts/tenor.js"></script>
+<script src="src/scripts/pages.js"></script>
+<script src="script.js"></script>
+<script>
+    name = 'erisui';
+
+    navigation.set([
+        { name: 'Overview', icon: icon.kit, action: 'navigateTab(overviewPage())' },
+        { name: 'Info', icon: icon.kit, action: 'navigateTab(infoPage())' },
+    ]);
+
+    navigation.show();
+    setTheme();
+    backGesture();
+    overviewPage();
+</script>
+</body>
+</html>

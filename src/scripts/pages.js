@@ -391,6 +391,7 @@ function themesPage() {
                 <div class="menu-button" id="bliss" onclick="toggleRadio('acrylicBackground', 'bliss');setTheme();"><span>Bliss</span><div class="radio"></div></div>
                 <div class="menu-button" id="mojave" onclick="toggleRadio('acrylicBackground', 'mojave');setTheme();"><span>Mojave</span><div class="radio"></div></div>
                 <div class="menu-button" id="loom" onclick="toggleRadio('acrylicBackground', 'loom');setTheme();"><span>Loom</span><div class="radio"></div></div>
+                <div class="menu-button" id="none" onclick="toggleRadio('acrylicBackground', 'none');setTheme();"><span>None</span><div class="radio"></div></div>
             </div>
             <div class="settings-options">
                 <div class="menu-button" id="disableBackdropBlur" onclick="toggleSetting('disableBackdropBlur');setTheme()"><span>Disable Backdrop Blur</span><div class="toggle">${icon.check}</div></div>

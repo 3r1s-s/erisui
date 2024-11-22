@@ -105,7 +105,7 @@
 
     --titlebar: #ffffff0d;
 
-    --wallpaper-url: url("src/assets/images/bg/6.jpg");
+    --wallpaper-url: '';
 
     body {
         background-image: var(--wallpaper-url);

@@ -696,7 +696,6 @@ iframe {
 .page {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     padding: 20px;
 }
 
@@ -712,17 +711,27 @@ iframe {
     margin: 0 20px;
 }
 
+.block {
+    display: flex;
+    flex-direction: column;
+    background: var(--app-300);
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 0 0 15px 0;
+    padding: 15px;
+}
+
 .settings-options {
     display: flex;
     flex-direction: column;
     background: var(--app-300);
     overflow: hidden;
     border-radius: 20px;
-    margin: 0 20px;
+    margin: 0 0 15px 0;
 }
 
-.page .settings-options {
-    margin: 0;
+.settings .settings-options {
+    margin: 0 20px;
 }
 
 .settings-about {
@@ -743,10 +752,14 @@ iframe {
 }
 
 .settings-options-title {
-    height: 8px;
-    margin: 0 25px;
+    margin: 5px 10px;
     font-weight: 400;
     opacity: 0.8;
+}
+
+.settings .settings-options-title {
+    height: 8px;
+    margin: 0 25px;
 }
 
 .settings-options-sub {
@@ -1098,7 +1111,7 @@ iframe {
 }
 
 .json-block {
-    margin: 0 20px;
+    margin: 0;
     padding: 20px;
     background: var(--app-100);
     border: 1px solid var(--app-500);
@@ -1116,7 +1129,7 @@ iframe {
     white-space: pre;
 }
 
-.page .json-block {
+.settings .json-block {
     margin: 0;
 }
 
@@ -1262,13 +1275,13 @@ button.accent:active {
     background: var(--app-300);
     font-weight: 500;
     border-radius: 20px;
-    margin: 0 20px;
+    margin: 0 0 15px 0;
     overflow: hidden;
     transition: max-height 243ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.page .accordion {
-    margin: 0;
+.settings .accordion {
+    margin: 0 20px;
 }
 
 .accordion-title {
