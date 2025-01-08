@@ -542,7 +542,7 @@ iframe {
 
 .modal-options {
     display: flex;
-    align-self: end;
+    justify-content: end;
     gap: 8px;
     padding: 5px 20px;
 }
@@ -917,9 +917,9 @@ iframe {
 
 .alert-options {
     display: flex;
-    align-self: end;
     gap: 8px;
     padding: 20px;
+    justify-content: end;
 }
 
 .alert-inner {
