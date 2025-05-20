@@ -51,14 +51,17 @@ function openModal(data) {
         sy = e.touches[0].clientY;
         my = e.touches[0].clientY;
         modal.style.transition = 'none';
+        modalInner.style = '';
     });
 
     modal.addEventListener('touchmove', (e) => {
         my = e.touches[0].clientY;
         const dist = my - sy;
         if (dist > 0 && ay) {
+            modalInner.style = 'overscroll-behavior: none';
             modal.style.transform = `translateY(${dist}px)`;
         } else {
+            modalInner.style = '';
             modal.style.transform = '';
         }
     });
@@ -70,6 +73,7 @@ function openModal(data) {
             modal.style.transform = 'translateY(100%)';
             closeModal();
         } else {
+            modalInner.style = '';
             modal.style.transform = '';
             modal.style.transition = '';
         }
