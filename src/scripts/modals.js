@@ -65,7 +65,6 @@ function openModal(data) {
 
     modal.addEventListener('touchend', () => {
         const dist = my - sy;
-        console.log(dist);
         if (dist > 125 && ay) {
             modal.style.transition = '';
             modal.style.transform = 'translateY(100%)';

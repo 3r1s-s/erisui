@@ -603,6 +603,10 @@ iframe {
     flex-direction: column;
 }
 
+.modal-subheader {
+    margin: 0;
+}
+
 .modal::after {
     content: '';
     position: absolute;
