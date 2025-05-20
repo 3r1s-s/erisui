@@ -44,6 +44,35 @@ function openModal(data) {
     }
     modalOuter.style.visibility = "visible";
     modalOuter.classList.add("open");
+
+    let sy, my, ay;
+    modal.addEventListener('touchstart', (e) => {
+        ay = !modalInner.scrollTop > 0;
+        sy = e.touches[0].clientY;
+        modal.style.transition = 'none';
+    });
+
+    modal.addEventListener('touchmove', (e) => {
+        my = e.touches[0].clientY;
+        const dist = my - sy;
+        if (dist > 0 && ay) {
+            modal.style.transform = `translateY(${dist}px)`;
+        } else {
+            modal.style.transform = '';
+        }
+    });
+
+    modal.addEventListener('touchend', () => {
+        const dist = my - sy;
+        if (dist > 50 && ay) {
+            modal.style.transition = '';
+            modal.style.transform = 'translateY(100%)';
+            closeModal();
+        } else {
+            modal.style.transform = '';
+            modal.style.transition = '';
+        }
+    });
 }
 
 function closeModal() {

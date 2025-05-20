@@ -4,6 +4,14 @@ let page;
 let back;
 let name;
 
+let loremipsum = `lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas.
+lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas.
+lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas.
+lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas.
+lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas.
+lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas. Quia, officia! Nisi, quas.
+`;
+
 const titlebar = (() => {
     const titlebar = document.querySelector('.titlebar');
     const backButton = titlebar.querySelector('.titlebar-back');

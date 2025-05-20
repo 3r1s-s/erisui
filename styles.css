@@ -425,6 +425,10 @@ iframe {
     position: relative;
 }
 
+.form-input-container {
+    position: relative;
+}
+
 .form label {
     transition: all .15s ease-out;
     color: var(--app-900);
@@ -533,7 +537,8 @@ iframe {
     flex-direction: column;
 
     transform: translateY(100%);
-    transition: transform cubic-bezier(0.68, 0.1, 0.27, 1) 0.4s;
+    /* transition: transform cubic-bezier(0.68, 0.1, 0.27, 1) 0.4s; */
+    transition: transform cubic-bezier(0.03, 1.06, 0.75, 1) 0.4s;
 }
 
 .modal-outer.open .modal {
