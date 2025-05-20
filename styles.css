@@ -105,7 +105,7 @@ button {
     background: var(--app-500);
     color: var(--app-text);
     width: max-content;
-    border-radius: 15px;
+    border-radius: 0.75rem;
     padding: 8px 20px;
     box-sizing: border-box;
     font-size: 0.9em;
@@ -116,6 +116,10 @@ button {
 
 button:active {
     background: var(--app-400);
+}
+
+button:disabled {
+    opacity: 0.4;
 }
 
 ul, ol {
