@@ -51,7 +51,7 @@ function openModal(data) {
         sy = e.touches[0].clientY;
         my = e.touches[0].clientY;
         modal.style.transition = 'none';
-        modalInner.style = '';
+        modalInner.style = 'overscroll-behavior: none';
     });
 
     modal.addEventListener('touchmove', (e) => {
@@ -75,7 +75,7 @@ function openModal(data) {
         } else {
             modalInner.style = '';
             modal.style.transform = '';
-            modal.style.transition = '';
+            modalInner.style.transition = '';
         }
     });
 }
