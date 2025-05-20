@@ -49,6 +49,7 @@ function openModal(data) {
     modal.addEventListener('touchstart', (e) => {
         ay = !modalInner.scrollTop > 0;
         sy = e.touches[0].clientY;
+        my = e.touches[0].clientY;
         modal.style.transition = 'none';
     });
 
@@ -64,7 +65,8 @@ function openModal(data) {
 
     modal.addEventListener('touchend', () => {
         const dist = my - sy;
-        if (dist > 50 && ay) {
+        console.log(dist);
+        if (dist > 125 && ay) {
             modal.style.transition = '';
             modal.style.transform = 'translateY(100%)';
             closeModal();
