@@ -268,6 +268,7 @@ function backGesture() {
 
         touchStart = event.touches[0].clientX;
         touchY = event.touches[0].clientY;
+        touchEnd = event.touches[0].clientX;
 
         if (touchStart < 20) {
             pulltab.classList.add('gesture');
@@ -291,6 +292,7 @@ function backGesture() {
             if (document.querySelector('.titlebar-back').onclick) {
                 document.querySelector('.titlebar-back').onclick();
             }
+
         }
         pulltab.classList.remove('gesture');
         pulltab.style.transform = '';
