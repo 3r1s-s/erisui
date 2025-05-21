@@ -542,7 +542,7 @@ iframe {
 
     transform: translateY(100%);
     /* transition: transform cubic-bezier(0.68, 0.1, 0.27, 1) 0.4s; */
-    transition: transform cubic-bezier(0.03, 1.06, 0.75, 1) 0.4s;
+    transition: transform cubic-bezier(0.2, 1.06, 0.75, 1) 0.4s;
 }
 
 .modal-outer.open .modal {
