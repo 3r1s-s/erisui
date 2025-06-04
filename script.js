@@ -40,16 +40,35 @@ const titlebar = (() => {
             }
         },
         type(val) {
-            if (val === 'large') {
+            app.style = '';
+            titlebar.style = '';
+            titlebar.querySelector('.title').style = '';
+            if (val === 'banner') {
+                titlebar.classList.add('banner');
+                titlebar.classList.remove('trans');
+                titlebar.classList.remove('large');
+
+                app.style.setProperty('--titlebar-height', '150px');
+                titlebar.style.color = '#fff';
+
+                fancyBanner();
+            } else if (val === 'large') {
                 titlebar.classList.add('large');
+                titlebar.classList.remove('banner');
                 titlebar.classList.remove('trans');
             } else if (val === 'clear') {
                 titlebar.classList.add('trans');
+                titlebar.classList.remove('banner');
                 titlebar.classList.remove('large');
             } else {
                 titlebar.classList.remove('large');
+                titlebar.classList.remove('banner');
                 titlebar.classList.remove('trans');
             }
+        },
+        banner(url) {
+            console.log(url);
+            titlebar.style.setProperty('--banner-url', `url(${url})`);
         }
     };
 })();
@@ -189,6 +208,34 @@ const device = {
     userAgent: navigator.userAgent
 };
 
+function fancyBanner() {
+    const titlebar = document.querySelector('.titlebar');
+
+    function scrollHeight() {
+        var max = 50;
+        if (content.scrollTop * 4 > max) {
+            titlebar.querySelector('.title').style.fontSize = `${1.8}em`;
+            titlebar.style.setProperty('--blur', `${max / 4 / 2}px`);
+         } else {
+            titlebar.querySelector('.title').style.fontSize = `${1.8 + (max / 4 / 20) - (content.scrollTop / 20)}em`;
+            titlebar.style.setProperty('--blur', `${content.scrollTop / 2}px`);
+        }
+        if (content.scrollTop * 4 > max) {
+            return 150 - max;
+        } else {
+            return 150 - content.scrollTop * 4;
+        }
+    }
+
+    app.style.setProperty('--titlebar-height', `${scrollHeight()}px`);
+
+    content.addEventListener('scroll', () => {
+        if (titlebar.classList.contains('banner')) {
+            app.style.setProperty('--titlebar-height', `${scrollHeight()}px`);
+        }
+    });
+}
+
 function toggleSetting(id) {
     const element = document.getElementById(id);
     if (settings.get(id) === true) {
@@ -222,6 +269,8 @@ function toggleRadio(group, id) {
     selectedItem.classList.add('selected');
 
     settings.set(group, id);
+
+    haptic();
 }
 
 function navigateForward(topage) {

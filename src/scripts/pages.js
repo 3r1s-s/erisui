@@ -1,8 +1,9 @@
 function overviewPage() {
     page = `overview`;
 
-    titlebar.set(`Overview`);
-    titlebar.type('large');
+    titlebar.set(`ErisUI`);
+    titlebar.type('banner');
+    titlebar.banner('src/assets/images/bg/bluefoam.jpg');
     titlebar.show();
     titlebar.back(``);
 
@@ -19,11 +20,18 @@ function overviewPage() {
                 <div class="menu-button" onclick="navigateForward('buttonsPage()')"><span>Buttons</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('modalsPage()')"><span>Modals</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('accordionsPage()')"><span>Accordions</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="navigateForward('progressbarPage()')"><span>Progressbars</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="navigateForward('themesPage()')"><span>Themes</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="navigateForward('examplePage()')"><span>Example</span>${icon.arrow}</div>
-                <div class="menu-button" onclick="navigateForward('iconsPage()')"><span>Icons</span>${icon.arrow}</div>
                 <div class="menu-button" onclick="navigateForward('textInputsPage()')"><span>Text Inputs</span>${icon.arrow}</div>
+                <div class="menu-button" onclick="navigateForward('checksPage()')"><span>Checkboxes & Radios</span>${icon.arrow}</div>
+            </div>
+            <span class="settings-options-title">Another Title</span>
+            <div class="accordion">
+                <div class="accordion-title" onclick="accordion(this)"><span>More</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    <div class="menu-button" onclick="navigateForward('progressbarPage()')"><span>Progressbars</span>${icon.arrow}</div>
+                    <div class="menu-button" onclick="navigateForward('themesPage()')"><span>Themes</span>${icon.arrow}</div>
+                    <div class="menu-button" onclick="navigateForward('examplePage()')"><span>Example</span>${icon.arrow}</div>
+                    <div class="menu-button" onclick="navigateForward('iconsPage()')"><span>Icons</span>${icon.arrow}</div>
+            </div>
             </div>
             <div class="settings-options">
                 <div class="menu-button" onclick="navigateForward('devicePage()')"><span>Device Info</span>${icon.arrow}</div>
@@ -229,8 +237,9 @@ function titlebarsPage() {
     <div class="page">
         <span>This page has a large titlebar, and a back button.</span>
         <div class="settings-options">
-            <div class="menu-button" onclick="navigateForward('titlebarInnerPage(0)')"><span>Clear Titlebar</span>${icon.arrow}</div>
+            <div class="menu-button" onclick="navigateForward('titlebarInnerPage(2)')"><span>Clear Titlebar</span>${icon.arrow}</div>
             <div class="menu-button" onclick="navigateForward('titlebarInnerPage(1)')"><span>Default Titlebar</span>${icon.arrow}</div>
+            <div class="menu-button" onclick="navigateForward('titlebarInnerPage(3)')"><span>Banner Titlebar</span>${icon.arrow}</div>
         </div>
         <div class="accordion">
             <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
@@ -244,10 +253,10 @@ function titlebarsPage() {
     pageElements();
 }
 
-function titlebarInnerPage(x) {
+function titlebarInnerPage(input) {
     page = `titlebar-inner`;
 
-    if (x) {
+    if (input == '1') {
         titlebar.set(`Default Titlebar`);
         titlebar.type();
         titlebar.show();    
@@ -264,7 +273,7 @@ function titlebarInnerPage(x) {
             </div>
         <div>
         `;
-    } else {
+    } else if (input == '2') {
         titlebar.set(``);
         titlebar.type('clear');
         titlebar.show();    
@@ -281,6 +290,25 @@ function titlebarInnerPage(x) {
             </div>
         <div>
         `;
+    } else if (input == '3') {
+        titlebar.set(`Banner`);
+        titlebar.type('banner');
+        titlebar.show();
+        titlebar.banner('src/assets/images/bg/AuroraBanner.jpeg');
+        titlebar.back('navigateBack(`titlebarsPage()`);');
+
+        content.innerHTML = `
+        <div class="page">
+            <span>This page has a banner titlebar</span>
+            <div class="accordion">
+                <div class="accordion-title" onclick="accordion(this)"><span>Show Code</span>${icon.dropdown}</div>
+                <div class="accordion-content">
+                    ${'titlebar.set("Title");\ntitlebar.type("clear");\ntitlebar.show();\ntitlebar.banner("url(src/assets/images/bg/AuroraBanner.jpeg)");'.code()}
+                </div>
+            </div>
+        <div>
+        `;
+    } else {
     }
 
     navigation.show();
@@ -350,35 +378,35 @@ function themesPage() {
     content.innerHTML = `
         <div class="settings appearance">
             <div class="theme-options">
-                <div class="theme-option dark" onclick="theme.set('dark')" style="--app-500: #1a1825;--app-900: #3e3b50;">
+                <div class="theme-option dark" onclick="theme.set('dark');haptic()" style="--app-500: #1a1825;--app-900: #3e3b50;">
                     <div class="theme-colour">
                     </div>
                     <div class="theme-name">
                         <span>Dark</span>
                     </div>
                 </div>
-                <div class="theme-option light" onclick="theme.set('light')">
+                <div class="theme-option light" onclick="theme.set('light');haptic()">
                     <div class="theme-colour">
                     </div>
                     <div class="theme-name">
                         <span>Light</span>
                     </div>
                 </div>
-                <div class="theme-option catppuccin-macchiato" onclick="theme.set('catppuccin-macchiato')">
+                <div class="theme-option catppuccin-macchiato" onclick="theme.set('catppuccin-macchiato');haptic()">
                     <div class="theme-colour">
                     </div>
                     <div class="theme-name">
                         <span>Twilight</span>
                     </div>
                 </div>
-                <div class="theme-option oled" onclick="theme.set('oled')">
+                <div class="theme-option oled" onclick="theme.set('oled';haptic())">
                     <div class="theme-colour">
                     </div>
                     <div class="theme-name">
                         <span>Black</span>
                     </div>
                 </div>
-                <div class="theme-option acrylic" onclick="theme.set('acrylic')">
+                <div class="theme-option acrylic" onclick="theme.set('acrylic');haptic()">
                     <div class="theme-colour">
                     </div>
                     <div class="theme-name">
@@ -542,6 +570,41 @@ function textInputsPage() {
         </div>
     <div>
     `;
+
+    pageElements();
+}
+
+function checksPage() {
+    page = `checks`;
+
+    titlebar.set(`Checkboxes & Radios`);
+    titlebar.type('large');
+    titlebar.show();
+    titlebar.back(`navigateBack('overviewPage()');`);
+
+    navigation.show();
+    content.classList.remove('max');
+    content.scrollTo(0,0);
+    content.style = ``;
+
+    content.innerHTML = `
+    <div class="settings">
+        <span class="settings-options-title">Checkbox</span>
+        <div class="settings-options">
+            <div class="menu-button" id="example-1" onclick="toggleSetting('example-1');"><span>Me</span><div class="toggle">${icon.check}</div></div>
+            <div class="menu-button" id="example-2" onclick="toggleSetting('example-2');"><span>Myself</span><div class="toggle">${icon.check}</div></div>
+            <div class="menu-button" id="example-3" onclick="toggleSetting('example-3');"><span>I</span><div class="toggle">${icon.check}</div></div>
+        </div>
+        <span class="settings-options-title">Radio</span>
+        <div class="settings-options radio-group" data-group="example-radio">
+            <div class="menu-button" id="there" onclick="toggleRadio('example-radio', 'there')"><span>There</span><div class="radio"></div></div>
+            <div class="menu-button" id="can" onclick="toggleRadio('example-radio', 'can')"><span>Can</span><div class="radio"></div></div>
+            <div class="menu-button" id="only" onclick="toggleRadio('example-radio', 'only')"><span>Only</span><div class="radio"></div></div>
+            <div class="menu-button" id="be" onclick="toggleRadio('example-radio', 'be')"><span>Be</span><div class="radio"></div></div>
+            <div class="menu-button" id="one" onclick="toggleRadio('example-radio', 'one')"><span>One</span><div class="radio"></div></div>
+        </div>
+    <div>
+    `
 
     pageElements();
 }
