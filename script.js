@@ -198,6 +198,8 @@ function toggleSetting(id) {
         element.classList.add('checked');
         settings.set(id, true);
     }
+
+    haptic();
 }
 
 function accordion(element) {
@@ -285,7 +287,11 @@ function backGesture() {
         let delta = touchEnd - touchStart;
         if (delta > 0 && touchStart < 20) {
             pulltab.style.transform = `translateX(${Math.min(-15, Math.pow(delta, 1.1) - 120)}px)`;
+            if (delta > 100) {
+                haptic();
+            }
         }
+
     }, false);
     
     window.addEventListener('touchend', function(event) {

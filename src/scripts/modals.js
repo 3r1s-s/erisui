@@ -3,6 +3,8 @@ function openModal(data) {
     const modalInner = document.querySelector(".modal-inner");
     const modal = document.querySelector(".modal");
 
+    haptic();
+
     if (data) {
         if (data.small) {
             modal.classList.add("small");
