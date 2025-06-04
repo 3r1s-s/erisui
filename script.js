@@ -183,7 +183,8 @@ const device = {
     },
     supports: {
       share: typeof navigator.share === 'function',
-      directDownload: 'download' in document.createElement('a')
+      directDownload: 'download' in document.createElement('a'),
+      haptics: 'vibrate' in navigator || 'Vibrate' in window || typeof window.navigator.vibrate === 'function',
     },
     userAgent: navigator.userAgent
 };
