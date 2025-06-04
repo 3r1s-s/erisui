@@ -18,9 +18,11 @@ function webkitHaptic() {
 }
 
 function haptic(x) {
-    if (device.supports.haptics) {
-        navigator.vibrate(x || 50);
-    } else if (device.is.iPhone) {
-        webkitHaptic();
-    }
+    // if (device.supports.haptics) {
+    //     navigator.vibrate(x || 50);
+    // } else if (device.is.iPhone) {
+    //     webkitHaptic();
+    // }
+
+    webkitHaptic();
 }
