@@ -400,7 +400,7 @@ function themesPage() {
                         <span>Twilight</span>
                     </div>
                 </div>
-                <div class="theme-option oled" onclick="theme.set('oled';haptic())">
+                <div class="theme-option oled" onclick="theme.set('oled';)haptic()">
                     <div class="theme-colour">
                     </div>
                     <div class="theme-name">
