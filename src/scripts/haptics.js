@@ -12,17 +12,17 @@ function webkitHaptic() {
         document.head.appendChild(label);
         label.click();
         document.head.removeChild(label);
+
+        console.log('webkitHaptic');
     } catch {
         // ignore
     }
 }
 
 function haptic(x) {
-    // if (device.supports.haptics) {
-    //     navigator.vibrate(x || 50);
-    // } else if (device.is.iPhone) {
-    //     webkitHaptic();
-    // }
-
-    webkitHaptic();
+    if (device.supports.haptics) {
+        navigator.vibrate(x || 50);
+    } else if (device.is.iPhone) {
+        webkitHaptic();
+    }
 }

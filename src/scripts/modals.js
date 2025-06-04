@@ -51,7 +51,7 @@ function openModal(data) {
     modal.addEventListener('touchstart', (e) => {
         ay = !modalInner.scrollTop > 0;
         sy = e.touches[0].clientY;
-        my = e.touches[0].clientY;
+        my = e.touches[0].clientY;           
         modal.style.transition = 'none';
         modalInner.style = 'overscroll-behavior: none';
     });
@@ -65,6 +65,7 @@ function openModal(data) {
         } else {
             modalInner.style = '';
             modal.style.transform = '';
+            modal.style.transition = '';
         }
     });
 
@@ -77,7 +78,7 @@ function openModal(data) {
         } else {
             modalInner.style = '';
             modal.style.transform = '';
-            modalInner.style.transition = '';
+            modal.style.transition = '';
         }
     });
 }
@@ -88,6 +89,8 @@ function closeModal() {
     const modal = document.querySelector(".modal");
 
     modalOuter.classList.remove("open");
+    modal.style.transition = '';
+    
 
     setTimeout(() => {
         modalOuter.style.visibility = "hidden";
