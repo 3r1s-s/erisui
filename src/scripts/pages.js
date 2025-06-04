@@ -306,6 +306,7 @@ function titlebarInnerPage(input) {
                     ${'titlebar.set("Title");\ntitlebar.type("clear");\ntitlebar.show();\ntitlebar.banner("url(src/assets/images/bg/AuroraBanner.jpeg)");'.code()}
                 </div>
             </div>
+            <span>${loremipsum}</span>
         <div>
         `;
     } else {
