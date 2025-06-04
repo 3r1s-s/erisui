@@ -216,12 +216,16 @@ function fancyBanner() {
         if (content.scrollTop * 4 > max) {
             titlebar.querySelector('.title').style.fontSize = `${1.8}em`;
             titlebar.style.setProperty('--blur', `${max / 4 / 2}px`);
+         } else if (content.scrollTop < 0) {
+            titlebar.querySelector('.title').style.fontSize = `${1.8 + (max / 4 / 100) - (content.scrollTop / 100)}em`;
          } else {
             titlebar.querySelector('.title').style.fontSize = `${1.8 + (max / 4 / 20) - (content.scrollTop / 20)}em`;
             titlebar.style.setProperty('--blur', `${content.scrollTop / 2}px`);
         }
         if (content.scrollTop * 4 > max) {
             return 150 - max;
+        } else if (content.scrollTop < 0) {
+            return 150 - content.scrollTop * 1;
         } else {
             return 150 - content.scrollTop * 4;
         }
