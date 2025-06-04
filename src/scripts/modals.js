@@ -120,6 +120,8 @@ function openAlert(data) {
     const modalInner = document.querySelector(".alert-inner");
     const modal = document.querySelector(".alert");
 
+    haptic();
+
     document.querySelector(".alert-options").style.display = "flex";
 
     modalInner.innerHTML = ``;
