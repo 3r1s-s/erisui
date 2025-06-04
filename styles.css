@@ -243,7 +243,7 @@ iframe {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 0;
+    padding: env(safe-area-inset-top) 0 0px 0;
 
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
