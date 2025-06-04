@@ -264,7 +264,6 @@ iframe {
 
 .titlebar.banner + .content {
     --titlebar-height: inherit;
-    min-height: auto;
 }
 
 .titlebar.trans {
