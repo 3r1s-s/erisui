@@ -2,7 +2,7 @@ function overviewPage() {
     page = `overview`;
 
     titlebar.set(`ErisUI`);
-    titlebar.type('banner');
+    titlebar.type('large');
     titlebar.banner('src/assets/images/bg/bluefoam.jpg');
     titlebar.show();
     titlebar.back(``);

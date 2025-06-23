@@ -67,7 +67,6 @@ const titlebar = (() => {
             }
         },
         banner(url) {
-            console.log(url);
             titlebar.style.setProperty('--banner-url', `url(${url})`);
         }
     };
