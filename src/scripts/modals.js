@@ -159,6 +159,10 @@ function openAlert(data) {
             buttons = `<button class="modal-button" onclick="closeAlert()">Close</button>`;
         }
 
+        if (data.center) {
+            modal.classList.add("center");
+        }
+
         document.querySelector(".alert-options").innerHTML = buttons;
     }
     modalOuter.style.visibility = "visible";

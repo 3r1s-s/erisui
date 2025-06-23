@@ -124,6 +124,8 @@ function modalsPage() {
             <div class="menu-button" onclick="openModal({title: 'Example Modal', body: loremipsum})"><span>Example Modal</span>${icon.arrow}</div>
             <div class="menu-button" onclick="openAlert({title: 'Example Alert', message: 'This is an example alert.'})"><span>Example Alert</span>${icon.arrow}</div>
             <div class="menu-button" onclick="openAlert({title: 'Example Alert', message: 'This is an example alert with buttons.', buttons: [{text: 'OK', action: 'closeAlert()'},{text: 'Yay', action: 'closeAlert()'}]})"><span>Example Alert with Buttons</span>${icon.arrow}</div>
+            <div class="menu-button" onclick="openAlert({center: true, title: 'Example Alert', message: 'This is an example alert.'})"><span>Centered Example Alert</span>${icon.arrow}</div>
+            <div class="menu-button" onclick="openAlert({center: true, title: 'Example Alert', message: 'This is an example alert with buttons.', buttons: [{text: 'OK', action: 'closeAlert()'},{text: 'Yay', action: 'closeAlert()'}]})"><span>Centered Example Alert with Buttons</span>${icon.arrow}</div>
             <div class="menu-button" onclick="tooltip({icon: icon.alert, title: 'Example Tooltip'})"><span>Example Tooltip</span>${icon.arrow}</div>
         </div>
     <div>

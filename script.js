@@ -93,6 +93,24 @@ const navigation = (() => {
                 `;
                 nav.appendChild(navItem);
             });
+        },
+        style(flavor) {
+            if (flavor === 'prog') {
+                nav.classList.add('progressive');
+                const progressiveCont = document.createElement('div');
+                progressiveCont.classList.add('progressive-blur');
+                progressiveCont.innerHTML = `
+                <div class="blur-filter"></div>
+                <div class="blur-filter"></div>
+                <div class="blur-filter"></div>
+                <div class="blur-filter"></div>
+                <div class="blur-filter"></div>
+                <div class="blur-filter"></div>
+                <div class="blur-filter"></div>
+                <div class="gradient"></div>
+                `;
+                nav.appendChild(progressiveCont);
+            }
         }
     };
 })();
@@ -209,31 +227,31 @@ const device = {
 };
 
 function fancyBanner() {
-    const titlebar = document.querySelector('.titlebar');
+    // const titlebar = document.querySelector('.titlebar');
 
-    function scrollHeight() {
-        var max = 50;
-        if (content.scrollTop * 4 > max) {
-            titlebar.querySelector('.title').style.fontSize = `${1.8}em`;
-            titlebar.style.setProperty('--blur', `${max / 4 / 2}px`);
-        } else {
-            titlebar.querySelector('.title').style.fontSize = `${1.8 + (max / 4 / 100) - (content.scrollTop / 100)}em`;
-            titlebar.style.setProperty('--blur', `${content.scrollTop / 2}px`);
-        }
-        if (content.scrollTop * 1 > max) {
-            return 150 - max;
-        } else {
-            return 150 - content.scrollTop * 1;
-        }
-    }
+    // function scrollHeight() {
+    //     var max = 50;
+    //     if (content.scrollTop * 4 > max) {
+    //         titlebar.querySelector('.title').style.fontSize = `${1.8}em`;
+    //         titlebar.style.setProperty('--blur', `${max / 4 / 2}px`);
+    //     } else {
+    //         titlebar.querySelector('.title').style.fontSize = `${1.8 + (max / 4 / 100) - (content.scrollTop / 100)}em`;
+    //         titlebar.style.setProperty('--blur', `${content.scrollTop / 2}px`);
+    //     }
+    //     if (content.scrollTop * 1 > max) {
+    //         return 150 - max;
+    //     } else {
+    //         return 150 - content.scrollTop * 1;
+    //     }
+    // }
 
-    app.style.setProperty('--titlebar-height', `${scrollHeight()}px`);
+    // app.style.setProperty('--titlebar-height', `${scrollHeight()}px`);
 
-    content.addEventListener('scroll', () => {
-        if (titlebar.classList.contains('banner')) {
-            app.style.setProperty('--titlebar-height', `${scrollHeight()}px`);
-        }
-    });
+    // content.addEventListener('scroll', () => {
+    //     if (titlebar.classList.contains('banner')) {
+    //         app.style.setProperty('--titlebar-height', `${scrollHeight()}px`);
+    //     }
+    // });
 }
 
 function toggleSetting(id) {
