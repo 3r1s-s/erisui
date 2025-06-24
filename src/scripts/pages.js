@@ -449,54 +449,19 @@ function examplePage() {
 
     content.innerHTML = `
     <div class="page">
-        <span style="white-space: pre-line;">I admit it
-What's to say
-I'll relive it
-Without pain
-
-Backstreet lover on the side of the road
-I got a bomb in my temple that is gonna explode
-I got a 16-gauge buried under my clothes, I pray
-
-Once upon a time
-I could control myself
-Ooh, once upon a time
-I could lose myself, yeah
-
-Oh, try and mimic
-What's insane
-I am in it
-Where do I stand?
-
-Indian summer and I hate the heat
-I got a backstreet lover on the passenger seat
-I got my hand in my pocket, so determined, discreet
-I pray
-
-Once upon a time
-I could control myself
-Ooh, once upon a time
-I could lose myself, yeah
-
-You think I got my eyes closed
-But I'm looking at you the whole fucking time
-
-Once upon a time
-I could control myself
-Ooh, once upon a time
-I could lose myself, yeah
-
-Ooh, once upon a time
-I could love myself, yeah
-Once upon a time
-I could love you, yeah, yeah, yeah
-Once
-Once
-Once
-Once
-Yeah, once, once, yeah, yeah
-Yeah, yeah, yeah, yeah, yeah
+        <span style="">
+            ${loremipsum}
         </span>
+        <img src="src/assets/images/Concepción_from_Maderas_(landscape).jpg" class="preview">
+        <div class="carousel" style="--carousel-item-width: 200px;">
+            <img src="src/assets/images/id/bab.jpg" class="preview clickable carousel-item" onclick="openImage('src/assets/images/id/bab.jpg')">
+            <img src="src/assets/images/id/eoe.jpg" class="preview clickable carousel-item" onclick="openImage('src/assets/images/id/eoe.jpg')">
+            <img src="src/assets/images/id/ide.jpg" class="preview clickable carousel-item" onclick="openImage('src/assets/images/id/ide.jpg')">
+            <img src="src/assets/images/id/itm.jpg" class="preview clickable carousel-item" onclick="openImage('src/assets/images/id/itm.jpg')">
+            <img src="src/assets/images/id/jgh.jpg" class="preview clickable carousel-item" onclick="openImage('src/assets/images/id/jgh.jpg')">
+            <img src="src/assets/images/id/pcd.jpg" class="preview clickable carousel-item" onclick="openImage('src/assets/images/id/pcd.jpg')">
+            <img src="src/assets/images/id/w96.jpg" class="preview clickable carousel-item" onclick="openImage('src/assets/images/id/w96.jpg')">
+        </div>
     <div>
     `;
 

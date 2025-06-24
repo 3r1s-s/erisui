@@ -159,7 +159,7 @@ function openAlert(data) {
             buttons = `<button class="modal-button" onclick="closeAlert()">Close</button>`;
         }
 
-        if (data.center) {
+        if (data.center === true) {
             modal.classList.add("center");
         }
 
@@ -345,6 +345,44 @@ function tooltip(data) {
             tooltip.remove();
         }, 1000);
     }, 3000);
+}
+
+async function shareImage(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    const filesArray = [
+      new File(
+        [blob],
+        url.split('/').pop(),
+        {
+          type: "image/jpeg",
+          lastModified: new Date().getTime()
+        }
+     )
+    ];
+
+    let shareData = {
+      files: filesArray,
+    };
+
+    if (!navigator.canShare) {
+      closeImage();
+      openAlert({
+          title: 'Error',
+          message: `Share API Unavailable`
+      })
+      return;
+    }
+
+    if (!navigator.canShare(shareData)) {
+      closeImage();
+      openAlert({
+          title: 'Error',
+          message: `Share data unavailable or invalid`
+      })
+      return;
+    }
+    navigator.share(shareData)
 }
 
 // tooltip({'title':"Copied!",'icon':icon.copy})

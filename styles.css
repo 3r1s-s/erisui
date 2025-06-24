@@ -168,6 +168,19 @@ iframe {
     color-scheme: light;
 }
 
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+img.preview {
+    border-radius: 15px;
+}
+
+img.clickable:active {
+    opacity: 0.8;
+}
+
 .app {
     --nav-height: 60px;
     --titlebar-height: 40px;
@@ -1493,6 +1506,21 @@ button.accent:active {
     100% {
         transform: translateX(100%) scaleX(0.3)
     }
+}
+
+.carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    gap: 8px;
+    scroll-snap-type: x mandatory;
+
+    --carousel-item-width: 200px;
+}
+
+.carousel > .carousel-item {
+  width: var(--carousel-item-width);
+  scroll-snap-align: start;
 }
 
 @media only screen and (min-width: 900px) {
