@@ -1702,9 +1702,13 @@ button.accent:active {
 }
 
 .nav.progressive .nav-item {
-    color: #ffffff70;
+    /* color: #ffffff70; */
+    color: var(--app-text);
+    opacity: 0.5;
+
 }
 
 .nav.progressive .nav-item.active {
     color: var(--app-text);
+    opacity: 1;
 }
