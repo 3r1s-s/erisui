@@ -388,6 +388,10 @@ img.clickable:active {
     color: var(--app-text);
 }
 
+.light .nav-item.active {
+    color: var(--app-accent);
+}
+
 .nav-item-inner {
     display: flex;
     flex-direction: column;
@@ -1523,100 +1527,6 @@ button.accent:active {
   scroll-snap-align: start;
 }
 
-@media only screen and (min-width: 900px) {
-    html {
-        overscroll-behavior: auto;
-    }
-
-    .app {
-        --nav-height: 60px;
-    }
-    
-    .titlebar.large .title {
-        max-width: calc(900px + -40px);
-        width: 100%;
-        left: 0;
-        right: 0;
-        position: fixed;
-        margin: 0px auto;
-    }
-
-    .titlebar.banner .title {
-        max-width: calc(900px + -40px);
-        width: 100%;
-        left: 0;
-        right: 0;
-        position: absolute;
-        margin: 0px auto;
-    }
-
-    .nav {
-        width: 100%;
-        max-width: 600px;
-        border-radius: 100px;
-        height: calc(var(--nav-height) - 20px);
-        margin: 0 auto calc(20px + env(safe-area-inset-bottom)) auto;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .nav-item {
-        border-radius: 100px;
-        height: calc(var(--nav-height) - 20px);
-    }
-
-    .nav-item-inner {
-        flex-direction: row;
-    }
-
-    .modal::after {
-        content: '';
-        position: absolute;
-        top: 4px;
-        left: calc(50% - 16px);
-        width: 32px;
-        height: 4px;
-        background: var(--modal-800);
-        border-radius: 100px;
-    }
-
-    .modal {
-        width: 70%;
-        max-width: 700px;
-        height: 60%;
-        min-height: 600px;
-        align-self: center;
-        background: var(--modal-400);
-        border: 3px solid var(--modal-600);
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-        color: var(--modal-text);
-        border-radius: 40px;
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        transform: scale(0.8);
-        opacity: 0;
-        overflow: hidden;
-        transition: transform cubic-bezier(0, -.25, 0, 1.5) 0.2s, opacity cubic-bezier(0, -.25, 0, 1) 0.2s;
-
-        padding-bottom: 0;
-    }
-
-    .modal-outer.open .modal {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .modal-options {
-        display: flex;
-        justify-content: end;
-        gap: 8px;
-        padding: 20px;
-    }
-}
-
 /* Progressive Blur */
 
 .nav.progressive {
@@ -1711,4 +1621,161 @@ button.accent:active {
 .nav.progressive .nav-item.active {
     color: var(--app-text);
     opacity: 1;
+}
+
+.light .nav.progressive .nav-item.active {
+    color: var(--app-accent);
+    opacity: 1;
+}
+
+@media only screen and (min-width: 900px) {
+    html {
+        overscroll-behavior: auto;
+    }
+
+    .app {
+        --nav-height: 60px;
+    }
+    
+    .titlebar.large .title {
+        max-width: calc(900px + -40px);
+        width: 100%;
+        left: 0;
+        right: 0;
+        position: fixed;
+        margin: 0px auto;
+    }
+
+    .titlebar.banner .title {
+        max-width: calc(900px + -40px);
+        width: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        margin: 0px auto;
+    }
+
+    .nav {
+        width: 100%;
+        max-width: 600px;
+        border-radius: 100px;
+        height: calc(var(--nav-height) - 20px);
+        margin: 0 auto calc(20px + env(safe-area-inset-bottom)) auto;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .nav-item {
+        border-radius: 100px;
+        height: calc(var(--nav-height) - 20px);
+    }
+
+    .nav-item-inner {
+        flex-direction: row;
+    }
+
+    .modal::after {
+        content: '';
+        position: absolute;
+        top: 4px;
+        left: calc(50% - 16px);
+        width: 32px;
+        height: 4px;
+        background: var(--modal-800);
+        border-radius: 100px;
+    }
+
+    .modal {
+        width: 70%;
+        max-width: 700px;
+        height: 60%;
+        min-height: 600px;
+        align-self: center;
+        background: var(--modal-400);
+        border: 3px solid var(--modal-600);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        color: var(--modal-text);
+        border-radius: 40px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0.8);
+        opacity: 0;
+        overflow: hidden;
+        transition: transform cubic-bezier(0, -.25, 0, 1.5) 0.2s, opacity cubic-bezier(0, -.25, 0, 1) 0.2s;
+
+        padding-bottom: 0;
+    }
+
+    .modal-outer.open .modal {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .modal-options {
+        display: flex;
+        justify-content: end;
+        gap: 8px;
+        padding: 20px;
+    }
+
+    .desktop .nav {
+        width: calc(100% - 900px);
+        max-width: 200px;
+        border-radius: 0;
+        height: calc(100% - var(--titlebar-height) + env(safe-area-inset-top));
+        margin: 0;
+        position: fixed;
+        top: calc(var(--titlebar-height) + env(safe-area-inset-top));
+        left: 0;
+        right: initial;
+        display: flex;
+        flex-direction: column;
+        background: var(--titlebar) !important;
+        border-top: none;
+        border-right: 2px solid var(--app-600);
+        align-items: center;
+        justify-content: flex-start;
+        box-sizing: border-box;
+    }
+
+    .desktop .nav-item {
+        flex: initial;
+        width: 100%;
+    }
+
+    .desktop .nav-item-inner {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .desktop .content {
+        position: fixed;
+        left: min(200px, calc(100% - 900px));
+        right: 0;
+    }
+
+    .desktop .titlebar.large .title {
+        width: 100%;
+        left: min(200px, calc(100% - 900px));
+        right: 0;
+        position: fixed;
+        margin: 0px auto;
+    }
+
+    .desktop .titlebar.large + .content + .nav {
+        border-top: 2px solid var(--app-600);
+        border-top-right-radius: 15px;
+    }
+
+    .desktop .blur-filter {
+        display: none;
+    }
+
+    .desktop .titlebar, .desktop .nav {
+        border: 0 !important;
+    }
 }
