@@ -161,6 +161,8 @@ function openAlert(data) {
 
         if (data.center === true) {
             modal.classList.add("center");
+        } else {
+            modal.classList.remove("center");
         }
 
         document.querySelector(".alert-options").innerHTML = buttons;
